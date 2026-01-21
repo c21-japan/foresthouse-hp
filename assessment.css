@@ -1,0 +1,241 @@
+/* ========================================
+   assessment.css - 無料査定ページ専用
+   フォレストハウス - 2024
+======================================== */
+
+/* ========================================
+   ASSESSMENTページ特徴
+======================================== */
+.assessment-features {
+    padding: 60px 0;
+    background-color: var(--color-gray-light);
+}
+
+.assessment-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.assessment-features-item {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+}
+
+.assessment-features-item img {
+    margin: 0 auto 15px;
+}
+
+.assessment-features-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.assessment-features-item p {
+    font-size: 14px;
+    color: var(--color-gray);
+}
+
+/* ========================================
+   査定フォーム
+======================================== */
+.assessment-form-section {
+    padding: 80px 0;
+}
+
+.assessment-form-section-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    padding: 50px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.assessment-form-section-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.assessment-form-section-subtitle {
+    text-align: center;
+    color: var(--color-gray);
+    margin-bottom: 40px;
+}
+
+/* ========================================
+   電話相談セクション
+======================================== */
+.assessment-phone {
+    padding: 60px 0;
+    background-color: var(--color-gray-light);
+}
+
+.assessment-phone-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.assessment-phone-content {
+    text-align: center;
+}
+
+.assessment-phone-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.assessment-phone-text {
+    color: var(--color-gray);
+    margin-bottom: 20px;
+}
+
+.assessment-phone-number {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.assessment-phone-note {
+    font-size: 14px;
+    color: var(--color-gray);
+}
+
+/* ========================================
+   LINE連携
+======================================== */
+.assessment-line {
+    padding: 60px 0;
+    background-color: var(--color-line);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.assessment-line-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.assessment-line-text {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.assessment-line-btn {
+    display: inline-block;
+    background-color: var(--color-white);
+    color: var(--color-line);
+    padding: 15px 40px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.assessment-line-btn:hover {
+    opacity: 0.9;
+    color: var(--color-line);
+}
+
+/* ========================================
+   査定の流れ
+======================================== */
+.assessment-flow {
+    padding: 80px 0;
+}
+
+.assessment-flow-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.assessment-flow-step {
+    text-align: center;
+    max-width: 200px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.assessment-flow-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin: 0 auto 15px;
+}
+
+.assessment-flow-content h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.assessment-flow-content p {
+    font-size: 13px;
+    color: var(--color-gray);
+}
+
+.assessment-flow-arrow {
+    font-size: 24px;
+    color: var(--color-primary);
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+.assessment-flow-note {
+    text-align: center;
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+/* ========================================
+   レスポンシブ（タブレット）
+======================================== */
+@media (max-width: 1024px) {
+    .assessment-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   レスポンシブ（スマホ）
+======================================== */
+@media (max-width: 768px) {
+    .assessment-features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .assessment-form-section-inner {
+        padding: 30px 20px;
+    }
+    
+    .assessment-phone-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .assessment-flow-timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .assessment-flow-arrow {
+        transform: rotate(90deg);
+    }
+}

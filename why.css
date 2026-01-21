@@ -1,0 +1,376 @@
+/* ========================================
+   why.css - 選ばれる理由ページ専用
+   フォレストハウス - 2024
+======================================== */
+
+/* ========================================
+   比較セクション（WHYページ）
+======================================== */
+.comparison {
+    padding: 80px 0;
+    background-color: var(--color-white);
+}
+
+.comparison-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.comparison-column {
+    flex: 1;
+    max-width: 350px;
+    min-width: 280px;
+    padding: 30px;
+    border-radius: var(--radius-md);
+}
+
+.comparison-column--other {
+    background-color: var(--color-gray-light);
+}
+
+.comparison-column--forest {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary);
+}
+
+.comparison-heading {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-gray-border);
+}
+
+.comparison-column--forest .comparison-heading {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.comparison-flow {
+    text-align: center;
+}
+
+.comparison-step {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+}
+
+.comparison-step--highlight {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.comparison-step--positive {
+    background-color: var(--color-success);
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.comparison-step--negative {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+}
+
+.comparison-arrow {
+    font-size: 20px;
+    color: var(--color-gray);
+    margin: 5px 0;
+}
+
+.comparison-result {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: var(--radius-sm);
+}
+
+.comparison-result--positive {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.comparison-result--negative {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+}
+
+.comparison-result-label {
+    display: block;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.comparison-result-value {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.comparison-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-gray);
+    flex-shrink: 0;
+}
+
+.comparison-image {
+    text-align: center;
+}
+
+.comparison-image img {
+    border-radius: var(--radius-md);
+    background-color: var(--color-gray-light);
+}
+
+/* ========================================
+   理由詳細セクション（WHYページ）
+======================================== */
+.reason-detail {
+    padding: 80px 0;
+}
+
+.reason-detail--alt {
+    background-color: var(--color-gray-light);
+}
+
+.reason-detail-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.reason-detail-number {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.reason-detail-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.reason-detail-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.reason-detail-content--reverse {
+    flex-direction: row-reverse;
+}
+
+.reason-detail-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.reason-detail-image img {
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary-light);
+    width: 100%;
+}
+
+.reason-detail-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.reason-detail-lead {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: var(--color-primary);
+}
+
+.reason-detail-point {
+    margin-bottom: 25px;
+}
+
+.reason-detail-point h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-black);
+}
+
+.reason-detail-point p {
+    color: var(--color-gray);
+    line-height: 1.7;
+}
+
+.reason-detail-benefits {
+    margin-top: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.reason-detail--alt .benefit-item {
+    background-color: var(--color-white);
+}
+
+.benefit-item-icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.benefit-item-content h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.benefit-item-content p {
+    font-size: 14px;
+    color: var(--color-gray);
+}
+
+/* 施工チャート */
+.construction-chart {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.construction-chart-center {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.construction-chart-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.construction-chart-item {
+    padding: 15px 20px;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* チーム分布 */
+.team-distribution {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.team-distribution-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.team-distribution-shop {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.team-distribution-count {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* ========================================
+   レスポンシブ（タブレット）
+======================================== */
+@media (max-width: 1024px) {
+    .comparison-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .comparison-column {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .comparison-vs {
+        transform: rotate(90deg);
+        margin: 20px 0;
+    }
+    
+    .reason-detail-content,
+    .reason-detail-content--reverse {
+        flex-direction: column;
+    }
+    
+    .reason-detail-image {
+        max-width: 100%;
+    }
+}
+
+/* ========================================
+   レスポンシブ（スマホ）
+======================================== */
+@media (max-width: 768px) {
+    .reason-detail-image,
+    .reason-detail-text {
+        min-width: auto;
+    }
+    
+    .team-distribution {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-column {
+        min-width: auto;
+    }
+}

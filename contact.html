@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ｜フォレストハウス</title>
+    <meta name="description" content="フォレストハウスへのお問い合わせはこちら。マンション売却、購入、リフォームのご相談を承ります。WEBフォーム、お電話、LINEでお気軽にどうぞ。">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    /* CONTACTページ専用CSS */
+    /* ========================================
+       お問い合わせ方法
+    ======================================== */
+    .contact-methods {
+        padding: 60px 0;
+        background-color: var(--color-gray-light);
+    }
+
+    .contact-methods__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .contact-methods__item {
+        text-align: center;
+        padding: 40px 30px;
+        background-color: var(--color-white);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .contact-methods__item img {
+        margin: 0 auto 15px;
+    }
+
+    .contact-methods__item h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .contact-methods__item p {
+        font-size: 14px;
+        color: var(--color-gray);
+        margin-bottom: 20px;
+    }
+
+    /* ========================================
+       電話相談セクション
+    ======================================== */
+    .contact-phone {
+        padding: 60px 0;
+        background-color: var(--color-gray-light);
+    }
+
+    .contact-phone__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .contact-phone__content {
+        text-align: center;
+    }
+
+    .contact-phone__title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .contact-phone__text {
+        color: var(--color-gray);
+        margin-bottom: 20px;
+    }
+
+    .contact-phone__number {
+        display: inline-block;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--color-primary);
+        margin-bottom: 10px;
+    }
+
+    .contact-phone__note {
+        font-size: 14px;
+        color: var(--color-gray);
+    }
+
+    /* ========================================
+       問い合わせフォーム
+    ======================================== */
+    .contact-form-section {
+        padding: 80px 0;
+    }
+
+    .contact-form-section__inner {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: var(--color-white);
+        padding: 50px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+    }
+
+    .contact-form-section__title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .contact-form-section__subtitle {
+        text-align: center;
+        color: var(--color-gray);
+        margin-bottom: 40px;
+    }
+
+    /* ========================================
+       FAQ誘導
+    ======================================== */
+    .contact-faq-link {
+        padding: 60px 0;
+        background-color: var(--color-white);
+    }
+
+    .contact-faq-link__inner {
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: var(--color-gray-light);
+        border-radius: var(--radius-md);
+    }
+
+    .contact-faq-link__inner h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .contact-faq-link__inner p {
+        color: var(--color-gray);
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    /* ========================================
+       レスポンシブ（タブレット）
+    ======================================== */
+    @media (max-width: 1024px) {
+        .contact-methods__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* ========================================
+       レスポンシブ（スマホ）
+    ======================================== */
+    @media (max-width: 768px) {
+        .contact-methods__grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .contact-phone__inner {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .contact-form-section__inner {
+            padding: 30px 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- ========== ヘッダー ========== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/index.html">
+                    <img src="/images/logo.webp" alt="フォレストハウス" width="200" height="40">
+                </a>
+            </div>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/index.html" class="nav__link">ホーム</a></li>
+                    <li class="nav__item"><a href="/why.html" class="nav__link">選ばれる理由</a></li>
+                    <li class="nav__item"><a href="/flow.html" class="nav__link">売却の流れ</a></li>
+                    <li class="nav__item"><a href="/results.html" class="nav__link">成約実績</a></li>
+                    <li class="nav__item"><a href="/shops.html" class="nav__link">店舗一覧</a></li>
+                    <li class="nav__item"><a href="/company.html" class="nav__link">会社概要</a></li>
+                    <li class="nav__item"><a href="/contact.html" class="nav__link nav__link--active">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__cta">
+                <a href="tel:0120-949-531" class="header__tel">
+                    <span class="header__tel-icon">📞</span>
+                    <span class="header__tel-number">0120-949-531</span>
+                </a>
+                <a href="/assessment.html" class="header__btn btn btn--primary">無料査定</a>
+            </div>
+            
+            <button class="header__hamburger" id="js-hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="header__sp-nav" id="js-sp-nav">
+            <ul class="sp-nav__list">
+                <li><a href="/index.html">ホーム</a></li>
+                <li><a href="/why.html">選ばれる理由</a></li>
+                <li><a href="/flow.html">売却の流れ</a></li>
+                <li><a href="/results.html">成約実績</a></li>
+                <li><a href="/shops.html">店舗一覧</a></li>
+                <li><a href="/company.html">会社概要</a></li>
+                <li><a href="/contact.html">お問い合わせ</a></li>
+                <li><a href="/assessment.html" class="btn btn--primary">無料査定</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== ページヒーロー ===== -->
+        <section class="page-hero">
+            <div class="page-hero__bg" style="background-image: url('/images/contact_hero.webp');"></div>
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content">
+                <h1 class="page-hero__title">お問い合わせ</h1>
+                <p class="page-hero__subtitle">お気軽にご相談ください</p>
+            </div>
+        </section>
+
+        <!-- ===== お問い合わせ方法選択 ===== -->
+        <section class="contact-methods">
+            <div class="container">
+                <div class="contact-methods__grid">
+                    <div class="contact-methods__item">
+                        <img src="/images/contact_icon_web.webp" alt="WEBフォーム" width="80" height="80">
+                        <h3>WEBフォーム</h3>
+                        <p>24時間受付</p>
+                        <a href="#contact-form" class="btn btn--outline">フォームへ</a>
+                    </div>
+                    <div class="contact-methods__item">
+                        <img src="/images/contact_icon_phone.webp" alt="お電話" width="80" height="80">
+                        <h3>お電話</h3>
+                        <p>8:00〜22:00</p>
+                        <a href="tel:0120-949-531" class="btn btn--outline">0120-949-531</a>
+                    </div>
+                    <div class="contact-methods__item">
+                        <img src="/images/contact_icon_line.webp" alt="LINE" width="80" height="80">
+                        <h3>LINE</h3>
+                        <p>友だち追加で簡単相談</p>
+                        <a href="https://lin.ee/eU5TyDR" class="btn btn--outline" target="_blank" rel="noopener">友だち追加</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== お問い合わせフォーム ===== -->
+        <section class="contact-form-section" id="contact-form">
+            <div class="container">
+                <div class="contact-form-section__inner">
+                    <h2 class="contact-form-section__title">お問い合わせフォーム</h2>
+                    <p class="contact-form-section__subtitle">以下のフォームにご入力ください。担当者より折り返しご連絡いたします。</p>
+                    
+                    <form class="contact-form" action="https://form.run/@century21top" method="POST">
+                        
+                        <div class="form-group">
+                            <label class="form-label">お問い合わせ種別 <span class="required">*必須</span></label>
+                            <div class="form-radio-group">
+                                <label class="form-radio">
+                                    <input type="radio" name="inquiry_type" value="売却相談" checked>
+                                    <span>売却相談</span>
+                                </label>
+                                <label class="form-radio">
+                                    <input type="radio" name="inquiry_type" value="購入相談">
+                                    <span>購入相談</span>
+                                </label>
+                                <label class="form-radio">
+                                    <input type="radio" name="inquiry_type" value="リフォーム相談">
+                                    <span>リフォーム相談</span>
+                                </label>
+                                <label class="form-radio">
+                                    <input type="radio" name="inquiry_type" value="その他">
+                                    <span>その他</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="name">お名前 <span class="required">*必須</span></label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="例：山田 太郎" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="furigana">フリガナ</label>
+                            <input type="text" id="furigana" name="furigana" class="form-input" placeholder="例：ヤマダ タロウ">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="tel">電話番号 <span class="required">*必須</span></label>
+                            <input type="tel" id="tel" name="tel" class="form-input" placeholder="例：090-1234-5678" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">メールアドレス <span class="required">*必須</span></label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="例：example@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="address">ご住所</label>
+                            <input type="text" id="address" name="address" class="form-input" placeholder="例：奈良県香芝市〇〇町1-2-3">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">ご相談内容 <span class="required">*必須</span></label>
+                            <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="ご相談内容をご記入ください。" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">ご希望の連絡方法</label>
+                            <div class="form-checkbox-group">
+                                <label class="form-checkbox">
+                                    <input type="checkbox" name="contact_method[]" value="電話">
+                                    <span>電話</span>
+                                </label>
+                                <label class="form-checkbox">
+                                    <input type="checkbox" name="contact_method[]" value="メール">
+                                    <span>メール</span>
+                                </label>
+                                <label class="form-checkbox">
+                                    <input type="checkbox" name="contact_method[]" value="LINE">
+                                    <span>LINE</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="contact_time">ご希望の連絡時間帯</label>
+                            <select id="contact_time" name="contact_time" class="form-select">
+                                <option value="">選択してください</option>
+                                <option value="午前（8:00〜12:00）">午前（8:00〜12:00）</option>
+                                <option value="午後（12:00〜17:00）">午後（12:00〜17:00）</option>
+                                <option value="夕方以降（17:00〜22:00）">夕方以降（17:00〜22:00）</option>
+                                <option value="いつでも可">いつでも可</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-agreement">
+                            <label class="form-checkbox">
+                                <input type="checkbox" name="agreement" required>
+                                <span><a href="/privacy.html" target="_blank">プライバシーポリシー</a>に同意する</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn--primary btn--large btn--full">送信する</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 電話でのお問い合わせ ===== -->
+        <section class="contact-phone">
+            <div class="container">
+                <div class="contact-phone__inner">
+                    <div class="contact-phone__content">
+                        <h2 class="contact-phone__title">お電話でのお問い合わせ</h2>
+                        <p class="contact-phone__text">お急ぎの方はお電話でどうぞ。<br>スタッフが丁寧に対応いたします。</p>
+                        <a href="tel:0120-949-531" class="contact-phone__number">
+                            📞 0120-949-531
+                        </a>
+                        <p class="contact-phone__note">受付時間：8:00〜22:00（年中無休）</p>
+                    </div>
+                    <div class="contact-phone__image">
+                        <img src="/images/contact_phone.webp" alt="電話でのお問い合わせ" width="300" height="225">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== よくある質問へのリンク ===== -->
+        <section class="contact-faq-link">
+            <div class="container">
+                <div class="contact-faq-link__inner">
+                    <h3>お問い合わせの前に</h3>
+                    <p>よくある質問もご覧ください。お問い合わせ内容の解決につながるかもしれません。</p>
+                    <a href="/flow.html#faq" class="btn btn--outline">よくある質問を見る</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== フッター ========== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__main">
+                <div class="footer__logo">
+                    <a href="/index.html">
+                        <img src="/images/logo_white.webp" alt="フォレストハウス" width="200" height="40">
+                    </a>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">サービス</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/why.html">選ばれる理由</a></li>
+                            <li><a href="/flow.html">売却の流れ</a></li>
+                            <li><a href="/assessment.html">無料査定</a></li>
+                            <li><a href="/results.html">成約実績</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">店舗情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/shops.html#nara">奈良本店</a></li>
+                            <li><a href="/shops.html#sakai">南大阪店</a></li>
+                            <li><a href="/shops.html#shinosaka">新大阪店</a></li>
+                            <li><a href="/shops.html#hanaten">放出駅前店</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">会社情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/company.html">会社概要</a></li>
+                            <li><a href="/contact.html">お問い合わせ</a></li>
+                            <li><a href="/privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__contact">
+                    <p class="footer__contact-title">お電話でのご相談</p>
+                    <a href="tel:0120-949-531" class="footer__tel">0120-949-531</a>
+                    <p class="footer__contact-note">受付時間：8:00〜22:00（年中無休）</p>
+                    <a href="https://lin.ee/eU5TyDR" class="footer__line" target="_blank" rel="noopener">
+                        LINEでのご相談はこちら
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 Forest House Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要｜株式会社フォレストハウス</title>
+    <meta name="description" content="株式会社フォレストハウスの会社概要。マンション売買仲介を専門に、奈良・大阪で4店舗展開。6職種の自社施工体制で高品質なサービスを提供。">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    /* COMPANYページ専用CSS */
+    /* ========================================
+       会社情報セクション
+    ======================================== */
+    .company-info {
+        padding: 80px 0;
+    }
+
+    .company-info__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        align-items: center;
+    }
+
+    .company-info__image {
+        flex: 1;
+    }
+
+    .company-info__image img {
+        border-radius: var(--radius-md);
+        background-color: var(--color-gray-light);
+        width: 100%;
+    }
+
+    .company-info__content {
+        flex: 1;
+    }
+
+    .company-info__title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--color-primary);
+    }
+
+    .company-info__text {
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--color-gray);
+        margin-bottom: 20px;
+    }
+
+    .company-info__list {
+        margin: 20px 0;
+    }
+
+    .company-info__list li {
+        padding: 10px 0;
+        padding-left: 25px;
+        position: relative;
+    }
+
+    .company-info__list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+
+    /* ========================================
+       会社概要テーブル
+    ======================================== */
+    .company-table {
+        padding: 80px 0;
+        background-color: var(--color-gray-light);
+    }
+
+    .company-table__inner {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: var(--color-white);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+    }
+
+    .company-table table {
+        width: 100%;
+    }
+
+    .company-table th {
+        width: 200px;
+        padding: 20px 30px;
+        background-color: var(--color-primary-light);
+        color: var(--color-primary);
+        text-align: left;
+        font-weight: 700;
+        font-size: 14px;
+        border-bottom: 1px solid var(--color-gray-border);
+    }
+
+    .company-table td {
+        padding: 20px 30px;
+        border-bottom: 1px solid var(--color-gray-border);
+        font-size: 15px;
+    }
+
+    .company-table tr:last-child th,
+    .company-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* ========================================
+       チーム紹介
+    ======================================== */
+    .company-team {
+        padding: 80px 0;
+    }
+
+    .company-team__intro {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .company-team__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .team-member {
+        text-align: center;
+        padding: 30px;
+        background-color: var(--color-gray-light);
+        border-radius: var(--radius-md);
+    }
+
+    .team-member__image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        background-color: var(--color-white);
+        overflow: hidden;
+    }
+
+    .team-member__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .team-member__name {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .team-member__role {
+        font-size: 14px;
+        color: var(--color-primary);
+        margin-bottom: 15px;
+    }
+
+    .team-member__bio {
+        font-size: 14px;
+        color: var(--color-gray);
+        line-height: 1.6;
+    }
+
+    /* ========================================
+       ビジョン・ミッション
+    ======================================== */
+    .company-vision {
+        padding: 80px 0;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
+
+    .company-vision__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    .vision-item {
+        text-align: center;
+    }
+
+    .vision-item__title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .vision-item__text {
+        font-size: 16px;
+        line-height: 1.8;
+        opacity: 0.95;
+    }
+
+    /* ========================================
+       レスポンシブ（タブレット）
+    ======================================== */
+    @media (max-width: 1024px) {
+        .company-info__grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .company-team__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .company-vision__grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    /* ========================================
+       レスポンシブ（スマホ）
+    ======================================== */
+    @media (max-width: 768px) {
+        .company-info__grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .company-table th {
+            width: 100px;
+            padding: 15px 20px;
+        }
+        
+        .company-table td {
+            padding: 15px 20px;
+        }
+        
+        .company-team__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- ========== ヘッダー ========== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/index.html">
+                    <img src="/images/logo.webp" alt="フォレストハウス" width="200" height="40">
+                </a>
+            </div>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/index.html" class="nav__link">ホーム</a></li>
+                    <li class="nav__item"><a href="/why.html" class="nav__link">選ばれる理由</a></li>
+                    <li class="nav__item"><a href="/flow.html" class="nav__link">売却の流れ</a></li>
+                    <li class="nav__item"><a href="/results.html" class="nav__link">成約実績</a></li>
+                    <li class="nav__item"><a href="/shops.html" class="nav__link">店舗一覧</a></li>
+                    <li class="nav__item"><a href="/company.html" class="nav__link nav__link--active">会社概要</a></li>
+                    <li class="nav__item"><a href="/contact.html" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__cta">
+                <a href="tel:0120-949-531" class="header__tel">
+                    <span class="header__tel-icon">📞</span>
+                    <span class="header__tel-number">0120-949-531</span>
+                </a>
+                <a href="/assessment.html" class="header__btn btn btn--primary">無料査定</a>
+            </div>
+            
+            <button class="header__hamburger" id="js-hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="header__sp-nav" id="js-sp-nav">
+            <ul class="sp-nav__list">
+                <li><a href="/index.html">ホーム</a></li>
+                <li><a href="/why.html">選ばれる理由</a></li>
+                <li><a href="/flow.html">売却の流れ</a></li>
+                <li><a href="/results.html">成約実績</a></li>
+                <li><a href="/shops.html">店舗一覧</a></li>
+                <li><a href="/company.html">会社概要</a></li>
+                <li><a href="/contact.html">お問い合わせ</a></li>
+                <li><a href="/assessment.html" class="btn btn--primary">無料査定</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== ページヒーロー ===== -->
+        <section class="page-hero">
+            <div class="page-hero__bg" style="background-image: url('/images/company_hero.webp');"></div>
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content">
+                <h1 class="page-hero__title">会社概要</h1>
+            </div>
+        </section>
+
+        <!-- ===== 企業理念 ===== -->
+        <section class="philosophy">
+            <div class="container">
+                <h2 class="section__title">企業理念</h2>
+                <div class="philosophy__content">
+                    <div class="philosophy__image">
+                        <img src="/images/company_philosophy.webp" alt="企業理念イメージ" width="500" height="300">
+                    </div>
+                    <div class="philosophy__text">
+                        <p class="philosophy__message">「住まいの売却を、<br>人生の新しいスタートに」</p>
+                        <p class="philosophy__description">私たちは、マンション売却という大きな決断をお客様の人生の転機として捉え、最高の結果でお応えすることをお約束します。購入希望者が先にいる独自のシステム、6職種の自社施工体制、27名の営業チームで、奈良・大阪エリアの不動産売却をトータルサポートいたします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 会社概要テーブル ===== -->
+        <section class="company-info">
+            <div class="container">
+                <h2 class="section__title">会社情報</h2>
+                <table class="company-table">
+                    <tbody>
+                        <tr>
+                            <th>会社名</th>
+                            <td>株式会社フォレストハウス</td>
+                        </tr>
+                        <tr>
+                            <th>事業内容</th>
+                            <td>
+                                ・不動産売買仲介<br>
+                                ・マンション買取再販<br>
+                                ・リフォーム設計・施工
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>従業員数</th>
+                            <td>営業スタッフ27名 / 施工スタッフ12名</td>
+                        </tr>
+                        <tr>
+                            <th>加盟団体</th>
+                            <td>全日本不動産協会</td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>8:00〜22:00（年中無休）</td>
+                        </tr>
+                        <tr>
+                            <th>フリーダイヤル</th>
+                            <td><a href="tel:0120-949-531">0120-949-531</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== 事業内容 ===== -->
+        <section class="business">
+            <div class="container">
+                <h2 class="section__title">事業内容</h2>
+                <div class="business__grid">
+                    <div class="business__card">
+                        <img src="/images/company_business1.webp" alt="不動産売買仲介" class="business__icon" width="100" height="100">
+                        <h3 class="business__title">不動産売買仲介</h3>
+                        <p class="business__text">マンション・戸建・土地の売買仲介。購入希望者が先にいる独自のシステムで、成約率86.3%を実現。</p>
+                    </div>
+                    <div class="business__card">
+                        <img src="/images/company_business2.webp" alt="マンション買取再販" class="business__icon" width="100" height="100">
+                        <h3 class="business__title">マンション買取再販</h3>
+                        <p class="business__text">直接買取でスピード現金化。リフォーム後の再販で物件価値を最大化します。</p>
+                    </div>
+                    <div class="business__card">
+                        <img src="/images/company_business3.webp" alt="リフォーム設計・施工" class="business__icon" width="100" height="100">
+                        <h3 class="business__title">リフォーム設計・施工</h3>
+                        <p class="business__text">6職種すべて自社施工。中間マージン0円で高品質なリフォームを提供。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 自社施工体制 ===== -->
+        <section class="construction">
+            <div class="container">
+                <h2 class="section__title">自社施工体制</h2>
+                <p class="construction__lead">以下の6職種をすべて自社で対応しています</p>
+                <div class="construction__chart">
+                    <div class="construction__center">
+                        <span>FOREST<br>HOUSE</span>
+                        <small>施工スタッフ12名</small>
+                    </div>
+                    <div class="construction__items">
+                        <div class="construction__item">
+                            <span class="construction__icon">🔨</span>
+                            <span class="construction__label">大工工事</span>
+                        </div>
+                        <div class="construction__item">
+                            <span class="construction__icon">🎨</span>
+                            <span class="construction__label">内装工事</span>
+                        </div>
+                        <div class="construction__item">
+                            <span class="construction__icon">💡</span>
+                            <span class="construction__label">電気工事</span>
+                        </div>
+                        <div class="construction__item">
+                            <span class="construction__icon">🚿</span>
+                            <span class="construction__label">水道工事</span>
+                        </div>
+                        <div class="construction__item">
+                            <span class="construction__icon">🔥</span>
+                            <span class="construction__label">ガス工事</span>
+                        </div>
+                        <div class="construction__item">
+                            <span class="construction__icon">🔧</span>
+                            <span class="construction__label">設備工事</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="construction__benefits">
+                    <p>外注なしの完全自社施工により、<strong>コスト削減・工期短縮・品質向上</strong>を実現</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 沿革 ===== -->
+        <section class="history">
+            <div class="container">
+                <h2 class="section__title">沿革</h2>
+                <div class="history__timeline">
+                    <div class="history__item">
+                        <span class="history__year">2013年</span>
+                        <div class="history__content">
+                            <h4 class="history__title">中古マンション売買事業開始</h4>
+                            <p class="history__text">奈良県を拠点に、中古マンションの売買仲介事業をスタート</p>
+                        </div>
+                    </div>
+                    <div class="history__item">
+                        <span class="history__year">2014年</span>
+                        <div class="history__content">
+                            <h4 class="history__title">建築事業開始</h4>
+                            <p class="history__text">自社施工によるリフォーム事業を開始。6職種の内製化に着手</p>
+                        </div>
+                    </div>
+                    <div class="history__item">
+                        <span class="history__year">2017年</span>
+                        <div class="history__content">
+                            <h4 class="history__title">支店展開開始</h4>
+                            <p class="history__text">大阪エリアへ進出。複数店舗展開による広域サービス体制を構築</p>
+                        </div>
+                    </div>
+                    <div class="history__item history__item--current">
+                        <span class="history__year">現在</span>
+                        <div class="history__content">
+                            <h4 class="history__title">奈良・大阪4店舗展開</h4>
+                            <p class="history__text">営業スタッフ27名、施工スタッフ12名体制。累計成約件数2,750件超を達成</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTAセクション ===== -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-section__inner">
+                    <h2 class="cta-section__title">まずは無料査定から</h2>
+                    <p class="cta-section__text">あなたのマンション、いくらで売れる？<br>購入希望者がお待ちの今がチャンスです。</p>
+                    <div class="cta-section__buttons">
+                        <a href="/assessment.html" class="btn btn--primary btn--large">WEBで無料査定</a>
+                        <a href="tel:0120-949-531" class="btn btn--secondary btn--large">
+                            📞 0120-949-531
+                        </a>
+                    </div>
+                    <p class="cta-section__note">受付時間：8:00〜22:00（年中無休）</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== フッター ========== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__main">
+                <div class="footer__logo">
+                    <a href="/index.html">
+                        <img src="/images/logo_white.webp" alt="フォレストハウス" width="200" height="40">
+                    </a>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">サービス</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/why.html">選ばれる理由</a></li>
+                            <li><a href="/flow.html">売却の流れ</a></li>
+                            <li><a href="/assessment.html">無料査定</a></li>
+                            <li><a href="/results.html">成約実績</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">店舗情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/shops.html#nara">奈良本店</a></li>
+                            <li><a href="/shops.html#sakai">南大阪店</a></li>
+                            <li><a href="/shops.html#shinosaka">新大阪店</a></li>
+                            <li><a href="/shops.html#hanaten">放出駅前店</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">会社情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/company.html">会社概要</a></li>
+                            <li><a href="/contact.html">お問い合わせ</a></li>
+                            <li><a href="/privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__contact">
+                    <p class="footer__contact-title">お電話でのご相談</p>
+                    <a href="tel:0120-949-531" class="footer__tel">0120-949-531</a>
+                    <p class="footer__contact-note">受付時間：8:00〜22:00（年中無休）</p>
+                    <a href="https://lin<span class="cursor">█</span>

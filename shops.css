@@ -1,0 +1,233 @@
+/* ========================================
+   shops.css - 店舗一覧ページ専用
+   フォレストハウス - 2024
+======================================== */
+
+/* ========================================
+   店舗マップ
+======================================== */
+.shops-map {
+    padding: 60px 0;
+    background-color: var(--color-gray-light);
+}
+
+.shops-map-image {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.shops-map-image img {
+    max-width: 800px;
+    width: 100%;
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+    margin: 0 auto;
+}
+
+.shops-map-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.shops-map-link {
+    padding: 10px 25px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.shops-map-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    opacity: 1;
+}
+
+/* ========================================
+   店舗詳細
+======================================== */
+.shop-detail {
+    padding: 80px 0;
+}
+
+.shop-detail--alt {
+    background-color: var(--color-gray-light);
+}
+
+.shop-detail-inner {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.shop-detail-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+.shop-detail-image img {
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary-light);
+    width: 100%;
+}
+
+.shop-detail-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.shop-detail-name {
+    font-size: 28px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.shop-detail-icon {
+    color: var(--color-primary);
+}
+
+.shop-detail-table {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.shop-detail-table th,
+.shop-detail-table td {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-gray-border);
+    text-align: left;
+    vertical-align: top;
+}
+
+.shop-detail-table th {
+    width: 120px;
+    font-weight: 700;
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+.shop-detail-table td {
+    font-size: 15px;
+}
+
+.shop-detail-table td a {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.shop-detail-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   共通特徴
+======================================== */
+.shops-common {
+    padding: 60px 0;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.shops-common .section-title {
+    color: var(--color-white);
+}
+
+.shops-common .section-title::after {
+    background-color: var(--color-white);
+}
+
+.shops-common-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.shops-common-item {
+    text-align: center;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.shops-common-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.shops-common-item h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.shops-common-item p {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.shops-common-item a {
+    color: var(--color-white);
+}
+
+/* ========================================
+   レスポンシブ（タブレット）
+======================================== */
+@media (max-width: 1024px) {
+    .shop-detail-inner {
+        flex-direction: column;
+    }
+    
+    .shop-detail-image {
+        max-width: 100%;
+    }
+    
+    .shops-common-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   レスポンシブ（スマホ）
+======================================== */
+@media (max-width: 768px) {
+    .shops-map-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .shop-detail-table th {
+        width: 100px;
+    }
+    
+    .shop-detail-actions {
+        flex-direction: column;
+    }
+    
+    .shop-detail-actions .btn {
+        width: 100%;
+    }
+    
+    .shops-common-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .shops-common-item {
+        padding: 20px 15px;
+    }
+    
+    .shop-detail-image,
+    .shop-detail-content {
+        min-width: auto;
+    }
+}

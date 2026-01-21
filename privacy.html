@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー｜フォレストハウス</title>
+    <meta name="description" content="株式会社フォレストハウスのプライバシーポリシー。個人情報の取り扱いについてご説明いたします。">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    /* PRIVACYページ専用CSS */
+    /* ========================================
+       プライバシーコンテンツ
+    ======================================== */
+    .privacy-content {
+        padding: 80px 0;
+    }
+
+    .privacy-content__inner {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .privacy-content__intro {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        padding: 25px;
+        background-color: var(--color-gray-light);
+        border-radius: var(--radius-sm);
+    }
+
+    /* ========================================
+       プライバシーセクション
+    ======================================== */
+    .privacy-section {
+        margin-bottom: 40px;
+    }
+
+    .privacy-section__title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--color-primary);
+        color: var(--color-black);
+    }
+
+    .privacy-section p {
+        margin-bottom: 15px;
+        line-height: 1.8;
+    }
+
+    .privacy-section__list {
+        margin: 15px 0;
+        padding-left: 25px;
+    }
+
+    .privacy-section__list li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 15px;
+        list-style: none;
+    }
+
+    .privacy-section__list li::before {
+        content: '・';
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
+    }
+
+    .privacy-section__contact {
+        padding: 25px;
+        background-color: var(--color-gray-light);
+        border-radius: var(--radius-sm);
+        margin-top: 15px;
+    }
+
+    .privacy-section__contact p {
+        margin-bottom: 5px;
+    }
+
+    /* ========================================
+       更新日
+    ======================================== */
+    .privacy-content__date {
+        text-align: right;
+        padding-top: 40px;
+        border-top: 1px solid var(--color-gray-border);
+        color: var(--color-gray);
+        font-size: 14px;
+    }
+
+    .privacy-content__date p {
+        margin-bottom: 5px;
+    }
+
+    /* ========================================
+       レスポンシブ（スマホ）
+    ======================================== */
+    @media (max-width: 768px) {
+        .privacy-content__intro {
+            font-size: 14px;
+        }
+        
+        .privacy-section__title {
+            font-size: 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- ========== ヘッダー ========== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/index.html">
+                    <img src="/images/logo.webp" alt="フォレストハウス" width="200" height="40">
+                </a>
+            </div>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/index.html" class="nav__link">ホーム</a></li>
+                    <li class="nav__item"><a href="/why.html" class="nav__link">選ばれる理由</a></li>
+                    <li class="nav__item"><a href="/flow.html" class="nav__link">売却の流れ</a></li>
+                    <li class="nav__item"><a href="/results.html" class="nav__link">成約実績</a></li>
+                    <li class="nav__item"><a href="/shops.html" class="nav__link">店舗一覧</a></li>
+                    <li class="nav__item"><a href="/company.html" class="nav__link">会社概要</a></li>
+                    <li class="nav__item"><a href="/contact.html" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__cta">
+                <a href="tel:0120-949-531" class="header__tel">
+                    <span class="header__tel-icon">📞</span>
+                    <span class="header__tel-number">0120-949-531</span>
+                </a>
+                <a href="/assessment.html" class="header__btn btn btn--primary">無料査定</a>
+            </div>
+            
+            <button class="header__hamburger" id="js-hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="header__sp-nav" id="js-sp-nav">
+            <ul class="sp-nav__list">
+                <li><a href="/index.html">ホーム</a></li>
+                <li><a href="/why.html">選ばれる理由</a></li>
+                <li><a href="/flow.html">売却の流れ</a></li>
+                <li><a href="/results.html">成約実績</a></li>
+                <li><a href="/shops.html">店舗一覧</a></li>
+                <li><a href="/company.html">会社概要</a></li>
+                <li><a href="/contact.html">お問い合わせ</a></li>
+                <li><a href="/assessment.html" class="btn btn--primary">無料査定</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== ページヒーロー ===== -->
+        <section class="page-hero page-hero--simple">
+            <div class="container">
+                <h1 class="page-hero__title">プライバシーポリシー</h1>
+            </div>
+        </section>
+
+        <!-- ===== プライバシーポリシー本文 ===== -->
+        <section class="privacy-content">
+            <div class="container">
+                <div class="privacy-content__inner">
+                    
+                    <p class="privacy-content__intro">株式会社フォレストハウス（以下「当社」といいます）は、お客様の個人情報の保護を重要な責務と認識し、以下のプライバシーポリシーに基づき、個人情報の適切な取り扱いと保護に努めます。</p>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">1. 個人情報の定義</h2>
+                        <p>本プライバシーポリシーにおいて「個人情報」とは、個人情報保護法に定める個人情報を指し、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、メールアドレス、その他の記述等により特定の個人を識別できるもの、または個人識別符号が含まれるものをいいます。</p>
+                    </article>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">2. 個人情報の収集方法</h2>
+                        <p>当社は、以下の方法により個人情報を収集することがあります。</p>
+                        <ul class="privacy-section__list">
+                            <li>お問い合わせフォーム、無料査定申込フォームからのご入力</li>
+                            <li>お電話でのお問い合わせ</li>
+                            <li>LINE公式アカウントでのやり取り</li>
+                            <li>ご来店時の受付票へのご記入</li>
+                            <li>不動産売買契約に関する書類</li>
+                            <li>名刺交換</li>
+                        </ul>
+                    </article>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">3. 個人情報の利用目的</h2>
+                        <p>当社は、収集した個人情報を以下の目的で利用いたします。</p>
+                        <ul class="privacy-section__list">
+                            <li>不動産売買仲介サービスの提供</li>
+                            <li>無料査定およびその結果のご連絡</li>
+                            <li>お問い合わせへの対応</li>
+                            <li>物件情報、サービス情報のご案内</li>
+                            <li>契約の履行および関連する事務手続き</li>
+                            <li>アフターサービスの提供</li>
+                            <li>当社サービスの改善および新サービスの開発</li>
+                            <li>法令に基づく対応</li>
+                        </ul>
+                    </article>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">4. 個人情報の第三者提供</h2>
+                        <p>当社は、以下の場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。</p>
+                        <ul class="privacy-section__list">
+                            <li>法令に基づく場合</li>
+                            <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+                            <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+                            <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+                            <li>不動産取引において、売主・買主双方への情報提供が必要な場合（取引に必要な範囲に限ります）</li>
+                        </ul>
+                    </article>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">5. 個人情報の安全管理</h2>
+                        <p>当社は、個人情報の紛失、破壊、改ざん、漏洩などを防止するため、適切なセキュリティ対策を実施し、個人情報の安全管理に努めます。また、個人情報を取り扱う従業員に対して、適切な監督を行います。</p>
+                    </article>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">6. 個人情報の開示・訂正・削除</h2>
+                        <p>お客様は、当社が保有するご自身の個人情報について、開示、訂正、追加、削除、利用停止を請求することができます。ご請求の際は、下記のお問い合わせ窓口までご連絡ください。ご本人様確認の上、合理的な期間内に対応いたします。</p>
+                    </article>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">7. Cookieの使用について</h2>
+                        <p>当社ウェブサイトでは、サービス向上のためCookieを使用することがあります。Cookieとは、ウェブサイトがお客様のブラウザに送信する小さなテキストファイルで、お客様のコンピュータに保存されます。お客様はブラウザの設定によりCookieの受け取りを拒否することができますが、その場合、当社サービスの一部がご利用いただけなくなる可能性があります。</p>
+                    </article>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">8. プライバシーポリシーの変更</h2>
+                        <p>当社は、法令の変更や社会情勢の変化等に応じて、本プライバシーポリシーを変更することがあります。変更後のプライバシーポリシーは、当社ウェブサイトに掲載した時点から効力を生じるものとします。</p>
+                    </article>
+
+                    <article class="privacy-section">
+                        <h2 class="privacy-section__title">9. お問い合わせ窓口</h2>
+                        <p>個人情報の取り扱いに関するお問い合わせは、下記までご連絡ください。</p>
+                        <div class="privacy-section__contact">
+                            <p><strong>株式会社フォレストハウス</strong></p>
+                            <p>フリーダイヤル：<a href="tel:0120-949-531">0120-949-531</a></p>
+                            <p>受付時間：8:00〜22:00（年中無休）</p>
+                            <p>お問い合わせフォーム：<a href="/contact.html">こちら</a></p>
+                        </div>
+                    </article>
+
+                    <div class="privacy-content__date">
+                        <p>制定日：2025年1月1日</p>
+                        <p>最終更新日：2025年1月21日</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== フッター ========== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__main">
+                <div class="footer__logo">
+                    <a href="/index.html">
+                        <img src="/images/logo_white.webp" alt="フォレストハウス" width="200" height="40">
+                    </a>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">サービス</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/why.html">選ばれる理由</a></li>
+                            <li><a href="/flow.html">売却の流れ</a></li>
+                            <li><a href="/assessment.html">無料査定</a></li>
+                            <li><a href="/results.html">成約実績</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">店舗情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/shops.html#nara">奈良本店</a></li>
+                            <li><a href="/shops.html#sakai">南大阪店</a></li>
+                            <li><a href="/shops.html#shinosaka">新大阪店</a></li>
+                            <li><a href="/shops.html#hanaten">放出駅前店</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">会社情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/company.html">会社概要</a></li>
+                            <li><a href="/contact.html">お問い合わせ</a></li>
+                            <li><a href="/privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__contact">
+                    <p class="footer__contact-title">お電話でのご相談</p>
+                    <a href="tel:0120-949-531" class="footer__tel">0120-949-531</a>
+                    <p class="footer__contact-note">受付時間：8:00〜22:00（年中無休）</p>
+                    <a href="https://lin.ee/eU5TyDR" class="footer__line" target="_blank" rel="noopener">
+                        LINEでのご相談はこちら
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 Forest House Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

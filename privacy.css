@@ -1,0 +1,104 @@
+/* ========================================
+   privacy.css - プライバシーポリシーページ専用
+   フォレストハウス - 2024
+======================================== */
+
+/* ========================================
+   プライバシーコンテンツ
+======================================== */
+.privacy-content {
+    padding: 80px 0;
+}
+
+.privacy-content-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.privacy-content-intro {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: var(--color-gray-light);
+    border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   プライバシーセクション
+======================================== */
+.privacy-section {
+    margin-bottom: 40px;
+}
+
+.privacy-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-black);
+}
+
+.privacy-section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.privacy-section-list {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.privacy-section-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+    list-style: none;
+}
+
+.privacy-section-list li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+.privacy-section-contact {
+    padding: 25px;
+    background-color: var(--color-gray-light);
+    border-radius: var(--radius-sm);
+    margin-top: 15px;
+}
+
+.privacy-section-contact p {
+    margin-bottom: 5px;
+}
+
+/* ========================================
+   更新日
+======================================== */
+.privacy-content-date {
+    text-align: right;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-gray-border);
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+.privacy-content-date p {
+    margin-bottom: 5px;
+}
+
+/* ========================================
+   レスポンシブ（スマホ）
+======================================== */
+@media (max-width: 768px) {
+    .privacy-content-intro {
+        font-size: 14px;
+    }
+    
+    .privacy-section-title {
+        font-size: 16px;
+    }
+}

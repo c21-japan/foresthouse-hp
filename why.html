@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選ばれる理由｜成約率86.3%の秘密｜フォレストハウス</title>
+    <meta name="description" content="なぜフォレストハウスは成約率86.3%を実現できるのか？購入希望者が先にいる仕組み、6職種自社施工、27名の営業体制の3つの強みをご紹介。">
+    
+    <!-- ファビコン -->
+    <link rel="icon" href="/images/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    /* WHYページ専用CSS */
+    /* ========================================
+       比較セクション（WHYページ）
+    ======================================== */
+    .comparison {
+        padding: 80px 0;
+        background-color: var(--color-white);
+    }
+
+    .comparison__grid {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 30px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .comparison__column {
+        flex: 1;
+        max-width: 350px;
+        min-width: 280px;
+        padding: 30px;
+        border-radius: var(--radius-md);
+    }
+
+    .comparison__column--other {
+        background-color: var(--color-gray-light);
+    }
+
+    .comparison__column--forest {
+        background-color: var(--color-primary-light);
+        border: 2px solid var(--color-primary);
+    }
+
+    .comparison__heading {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--color-gray-border);
+    }
+
+    .comparison__column--forest .comparison__heading {
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    .comparison__flow {
+        text-align: center;
+    }
+
+    .comparison__step {
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: var(--color-white);
+        border-radius: var(--radius-sm);
+        font-size: 14px;
+    }
+
+    .comparison__step--highlight {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        font-weight: 700;
+    }
+
+    .comparison__step--positive {
+        background-color: var(--color-success);
+        color: var(--color-white);
+        font-weight: 700;
+    }
+
+    .comparison__step--negative {
+        background-color: var(--color-gray);
+        color: var(--color-white);
+    }
+
+    .comparison__arrow {
+        font-size: 20px;
+        color: var(--color-gray);
+        margin: 5px 0;
+    }
+
+    .comparison__result {
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: var(--radius-sm);
+    }
+
+    .comparison__result--positive {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
+
+    .comparison__result--negative {
+        background-color: var(--color-gray);
+        color: var(--color-white);
+    }
+
+    .comparison__result-label {
+        display: block;
+        font-size: 12px;
+        opacity: 0.9;
+    }
+
+    .comparison__result-value {
+        display: block;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .comparison__vs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--color-gray);
+        flex-shrink: 0;
+    }
+
+    .comparison__image {
+        text-align: center;
+    }
+
+    .comparison__image img {
+        border-radius: var(--radius-md);
+        background-color: var(--color-gray-light);
+    }
+
+    /* ========================================
+       理由詳細セクション（WHYページ）
+    ======================================== */
+    .reason-detail {
+        padding: 80px 0;
+    }
+
+    .reason-detail--alt {
+        background-color: var(--color-gray-light);
+    }
+
+    .reason-detail__header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .reason-detail__number {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background-color: var(--color-primary-light);
+        padding: 5px 20px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+    }
+
+    .reason-detail__title {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .reason-detail__content {
+        display: flex;
+        gap: 50px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .reason-detail__content--reverse {
+        flex-direction: row-reverse;
+    }
+
+    .reason-detail__image {
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+    }
+
+    .reason-detail__image img {
+        border-radius: var(--radius-md);
+        background-color: var(--color-primary-light);
+        width: 100%;
+    }
+
+    .reason-detail__text {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .reason-detail__lead {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        color: var(--color-primary);
+    }
+
+    .reason-detail__point {
+        margin-bottom: 25px;
+    }
+
+    .reason-detail__point h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--color-black);
+    }
+
+    .reason-detail__point p {
+        color: var(--color-gray);
+        line-height: 1.7;
+    }
+
+    .reason-detail__benefits {
+        margin-top: 30px;
+    }
+
+    .benefit-item {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: var(--color-white);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .reason-detail--alt .benefit-item {
+        background-color: var(--color-white);
+    }
+
+    .benefit-item__icon {
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .benefit-item__content h5 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .benefit-item__content p {
+        font-size: 14px;
+        color: var(--color-gray);
+    }
+
+    /* 施工チャート */
+    .construction-chart {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    .construction-chart__center {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 120px;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .construction-chart__items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .construction-chart__item {
+        padding: 15px 20px;
+        background-color: var(--color-white);
+        border: 2px solid var(--color-primary);
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    /* チーム分布 */
+    .team-distribution {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 30px 0;
+    }
+
+    .team-distribution__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background-color: var(--color-white);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .team-distribution__shop {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .team-distribution__count {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    /* ========================================
+       レスポンシブ（タブレット）
+    ======================================== */
+    @media (max-width: 1024px) {
+        .comparison__grid {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .comparison__column {
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        .comparison__vs {
+            transform: rotate(90deg);
+            margin: 20px 0;
+        }
+        
+        .reason-detail__content,
+        .reason-detail__content--reverse {
+            flex-direction: column;
+        }
+        
+        .reason-detail__image {
+            max-width: 100%;
+        }
+    }
+
+    /* ========================================
+       レスポンシブ（スマホ）
+    ======================================== */
+    @media (max-width: 768px) {
+        .reason-detail__image,
+        .reason-detail__text {
+            min-width: auto;
+        }
+        
+        .team-distribution {
+            grid-template-columns: 1fr;
+        }
+        
+        .comparison__column {
+            min-width: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- ========== ヘッダー ========== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/index.html">
+                    <img src="/images/logo.webp" alt="フォレストハウス" width="200" height="40">
+                </a>
+            </div>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/index.html" class="nav__link">ホーム</a></li>
+                    <li class="nav__item"><a href="/why.html" class="nav__link nav__link--active">選ばれる理由</a></li>
+                    <li class="nav__item"><a href="/flow.html" class="nav__link">売却の流れ</a></li>
+                    <li class="nav__item"><a href="/results.html" class="nav__link">成約実績</a></li>
+                    <li class="nav__item"><a href="/shops.html" class="nav__link">店舗一覧</a></li>
+                    <li class="nav__item"><a href="/company.html" class="nav__link">会社概要</a></li>
+                    <li class="nav__item"><a href="/contact.html" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__cta">
+                <a href="tel:0120-949-531" class="header__tel">
+                    <span class="header__tel-icon">📞</span>
+                    <span class="header__tel-number">0120-949-531</span>
+                </a>
+                <a href="/assessment.html" class="header__btn btn btn--primary">無料査定</a>
+            </div>
+            
+            <button class="header__hamburger" id="js-hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="header__sp-nav" id="js-sp-nav">
+            <ul class="sp-nav__list">
+                <li><a href="/index.html">ホーム</a></li>
+                <li><a href="/why.html">選ばれる理由</a></li>
+                <li><a href="/flow.html">売却の流れ</a></li>
+                <li><a href="/results.html">成約実績</a></li>
+                <li><a href="/shops.html">店舗一覧</a></li>
+                <li><a href="/company.html">会社概要</a></li>
+                <li><a href="/contact.html">お問い合わせ</a></li>
+                <li><a href="/assessment.html" class="btn btn--primary">無料査定</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== ページヒーロー ===== -->
+        <section class="page-hero">
+            <div class="page-hero__bg" style="background-image: url('/images/why_hero.webp');"></div>
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content">
+                <h1 class="page-hero__title">フォレストハウスが<br>選ばれる理由</h1>
+                <p class="page-hero__subtitle">成約率86.3%を実現する3つの強み</p>
+            </div>
+        </section>
+
+        <!-- ===== 比較セクション ===== -->
+        <section class="comparison">
+            <div class="container">
+                <h2 class="section__title">一般的な不動産会社との違い</h2>
+                <div class="comparison__grid">
+                    <div class="comparison__column comparison__column--other">
+                        <h3 class="comparison__heading">一般的な不動産会社</h3>
+                        <div class="comparison__flow">
+                            <div class="comparison__step">売却依頼を受ける</div>
+                            <div class="comparison__arrow">↓</div>
+                            <div class="comparison__step">買主を探し始める</div>
+                            <div class="comparison__arrow">↓</div>
+                            <div class="comparison__step">広告・内見対応</div>
+                            <div class="comparison__arrow">↓</div>
+                            <div class="comparison__step comparison__step--negative">時間がかかる…</div>
+                        </div>
+                        <div class="comparison__result comparison__result--negative">
+                            <span class="comparison__result-label">成約率</span>
+                            <span class="comparison__result-value">約40%</span>
+                        </div>
+                    </div>
+                    <div class="comparison__vs">VS</div>
+                    <div class="comparison__column comparison__column--forest">
+                        <h3 class="comparison__heading">フォレストハウス</h3>
+                        <div class="comparison__flow">
+                            <div class="comparison__step comparison__step--highlight">購入希望者が先にいる</div>
+                            <div class="comparison__arrow">↓</div>
+                            <div class="comparison__step">売却依頼を受ける</div>
+                            <div class="comparison__arrow">↓</div>
+                            <div class="comparison__step comparison__step--highlight">即マッチング！</div>
+                            <div class="comparison__arrow">↓</div>
+                            <div class="comparison__step comparison__step--positive">スピード成約！</div>
+                        </div>
+                        <div class="comparison__result comparison__result--positive">
+                            <span class="comparison__result-label">成約率</span>
+                            <span class="comparison__result-value">86.3%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison__image">
+                    <img src="/images/why_comparison.webp" alt="一般的な会社とフォレストハウスの比較" width="800" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 理由①：購入希望者が先にいる ===== -->
+        <section class="reason-detail" id="reason1">
+            <div class="container">
+                <div class="reason-detail__header">
+                    <span class="reason-detail__number">REASON 01</span>
+                    <h2 class="reason-detail__title">購入希望者が先にいる</h2>
+                </div>
+                <div class="reason-detail__content">
+                    <div class="reason-detail__image" id="buyers">
+                        <img src="/images/why_buyers.webp" alt="購入希望者がお待ちです" width="600" height="400">
+                    </div>
+                    <div class="reason-detail__text">
+                        <p class="reason-detail__lead">私たちは「売りたい人」を待つのではなく、<br>「買いたい人」を先に集めています。</p>
+                        <div class="reason-detail__point">
+                            <h4>チラシ配布で購入希望者を先に集客</h4>
+                            <p>「マンション売却しませんか？当社には購入希望者がお待ちです」というチラシを地域に配布。この仕組みにより、売却依頼をいただいた時点で購入希望者とのマッチングが可能です。</p>
+                        </div>
+                        <div class="reason-detail__point">
+                            <h4>だから成約率86.3%</h4>
+                            <p>一般的な不動産会社の成約率は約40%。フォレストハウスは86.3%という圧倒的な成約率を実現しています。</p>
+                        </div>
+                        <div class="reason-detail__point">
+                            <h4>平均売却期間わずか26日</h4>
+                            <p>購入希望者が先にいるから、売却開始から成約まで平均わずか26日。スピード売却を実現します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 理由②：6職種自社施工 ===== -->
+        <section class="reason-detail reason-detail--alt" id="reason2">
+            <div class="container">
+                <div class="reason-detail__header">
+                    <span class="reason-detail__number">REASON 02</span>
+                    <h2 class="reason-detail__title">6職種すべて自社施工</h2>
+                </div>
+                <div class="reason-detail__content reason-detail__content--reverse">
+                    <div class="reason-detail__image">
+                        <img src="/images/why_construction.webp" alt="6職種自社施工体制" width="600" height="400">
+                    </div>
+                    <div class="reason-detail__text">
+                        <p class="reason-detail__lead">外注なしの完全自社施工だから、<br>中間マージン0円・高品質を実現。</p>
+                        
+                        <div class="construction-chart">
+                            <div class="construction-chart__center">
+                                <span>FOREST<br>HOUSE</span>
+                            </div>
+                            <div class="construction-chart__items">
+                                <div class="construction-chart__item">🔨<br>大工工事</div>
+                                <div class="construction-chart__item">🎨<br>内装工事</div>
+                                <div class="construction-chart__item">💡<br>電気工事</div>
+                                <div class="construction-chart__item">🚿<br>水道工事</div>
+                                <div class="construction-chart__item">🔥<br>ガス工事</div>
+                                <div class="construction-chart__item">🔧<br>設備工事</div>
+                            </div>
+                        </div>
+                        
+                        <div class="reason-detail__benefits">
+                            <div class="benefit-item">
+                                <span class="benefit-item__icon">✓</span>
+                                <div class="benefit-item__content">
+                                    <h5>中間マージン0円</h5>
+                                    <p>外注費がないから、売主様への還元額がUP</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-item__icon">✓</span>
+                                <div class="benefit-item__content">
+                                    <h5>工期短縮</h5>
+                                    <p>自社で一貫対応だから、早期売却が可能</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-item__icon">✓</span>
+                                <div class="benefit-item__content">
+                                    <h5>品質管理徹底</h5>
+                                    <p>施工スタッフ12名が責任施工</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 理由③：27名の営業体制 ===== -->
+        <section class="reason-detail" id="reason3">
+            <div class="container">
+                <div class="reason-detail__header">
+                    <span class="reason-detail__number">REASON 03</span>
+                    <h2 class="reason-detail__title">27名の営業が全力サポート</h2>
+                </div>
+                <div class="reason-detail__content">
+                    <div class="reason-detail__image">
+                        <img src="/images/why_team.webp" alt="27名の営業チーム" width="600" height="400">
+                    </div>
+                    <div class="reason-detail__text">
+                        <p class="reason-detail__lead">4店舗27名の営業スタッフが連携し、<br>最速・最善の売却をサポート。</p>
+                        
+                        <div class="team-distribution">
+                            <div class="team-distribution__item">
+                                <span class="team-distribution__shop">奈良本店</span>
+                                <span class="team-distribution__count">7名</span>
+                            </div>
+                            <div class="team-distribution__item">
+                                <span class="team-distribution__shop">南大阪店</span>
+                                <span class="team-distribution__count">7名</span>
+                            </div>
+                            <div class="team-distribution__item">
+                                <span class="team-distribution__shop">新大阪店</span>
+                                <span class="team-distribution__count">7名</span>
+                            </div>
+                            <div class="team-distribution__item">
+                                <span class="team-distribution__shop">放出駅前店</span>
+                                <span class="team-distribution__count">6名</span>
+                            </div>
+                        </div>
+                        
+                        <div class="reason-detail__benefits">
+                            <div class="benefit-item">
+                                <span class="benefit-item__icon">✓</span>
+                                <div class="benefit-item__content">
+                                    <h5>専任担当制</h5>
+                                    <p>お客様1人に担当1人が最後まで責任対応</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-item__icon">✓</span>
+                                <div class="benefit-item__content">
+                                    <h5>店舗間情報共有</h5>
+                                    <p>4店舗の購入希望者情報をリアルタイム共有</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-item__icon">✓</span>
+                                <div class="benefit-item__content">
+                                    <h5>迅速対応</h5>
+                                    <p>最短即日で内見対応が可能</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTAセクション ===== -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-section__inner">
+                    <h2 class="cta-section__title">まずは無料査定から</h2>
+                    <p class="cta-section__text">あなたのマンション、いくらで売れる？<br>購入希望者がお待ちの今がチャンスです。</p>
+                    <div class="cta-section__buttons">
+                        <a href="/assessment.html" class="btn btn--primary btn--large">WEBで無料査定</a>
+                        <a href="tel:0120-949-531" class="btn btn--secondary btn--large">
+                            📞 0120-949-531
+                        </a>
+                    </div>
+                    <p class="cta-section__note">受付時間：8:00〜22:00（年中無休）</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== フッター ========== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__main">
+                <div class="footer__logo">
+                    <a href="/index.html">
+                        <img src="/images/logo_white.webp" alt="フォレストハウス" width="200" height="40">
+                    </a>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">サービス</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/why.html">選ばれる理由</a></li>
+                            <li><a href="/flow.html">売却の流れ</a></li>
+                            <li><a href="/assessment.html">無料査定</a></li>
+                            <li><a href="/results.html">成約実績</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">店舗情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/shops.html#nara">奈良本店</a></li>
+                            <li><a href="/shops.html#sakai">南大阪店</a></li>
+                            <li><a href="/shops.html#shinosaka">新大阪店</a></li>
+                            <li><a href="/shops.html#hanaten">放出駅前店</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">会社情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/company.html">会社概要</a></li>
+                            <li><a href="/contact.html">お問い合わせ</a></li>
+                            <li><a href="/privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__contact">
+                    <p class="footer__contact-title">お電話でのご相談</p>
+                    <a href="tel:0120-949-531" class="footer__tel">0120-949-531</a>
+                    <p class="footer__contact-note">受付時間：8:00〜22:00（年中無休）</p>
+                    <a href="https://lin.ee/eU5TyDR" class="footer__line" target="_blank" rel="noopener">
+                        LINEでのご相談はこちら
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 Forest House Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

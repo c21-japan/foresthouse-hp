@@ -1,0 +1,168 @@
+/* ========================================
+   contact.css - お問い合わせページ専用
+   フォレストハウス - 2024
+======================================== */
+
+/* ========================================
+   お問い合わせ方法
+======================================== */
+.contact-methods {
+    padding: 60px 0;
+    background-color: var(--color-gray-light);
+}
+
+.contact-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.contact-methods-item {
+    text-align: center;
+    padding: 40px 30px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-methods-item img {
+    margin: 0 auto 15px;
+}
+
+.contact-methods-item h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.contact-methods-item p {
+    font-size: 14px;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+}
+
+/* ========================================
+   電話相談セクション
+======================================== */
+.contact-phone {
+    padding: 60px 0;
+    background-color: var(--color-gray-light);
+}
+
+.contact-phone-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.contact-phone-content {
+    text-align: center;
+}
+
+.contact-phone-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-phone-text {
+    color: var(--color-gray);
+    margin-bottom: 20px;
+}
+
+.contact-phone-number {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.contact-phone-note {
+    font-size: 14px;
+    color: var(--color-gray);
+}
+
+/* ========================================
+   問い合わせフォーム
+======================================== */
+.contact-form-section {
+    padding: 80px 0;
+}
+
+.contact-form-section-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    padding: 50px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form-section-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact-form-section-subtitle {
+    text-align: center;
+    color: var(--color-gray);
+    margin-bottom: 40px;
+}
+
+/* ========================================
+   FAQ誘導
+======================================== */
+.contact-faq-link {
+    padding: 60px 0;
+    background-color: var(--color-white);
+}
+
+.contact-faq-link-inner {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--color-gray-light);
+    border-radius: var(--radius-md);
+}
+
+.contact-faq-link-inner h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-faq-link-inner p {
+    color: var(--color-gray);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* ========================================
+   レスポンシブ（タブレット）
+======================================== */
+@media (max-width: 1024px) {
+    .contact-methods-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   レスポンシブ（スマホ）
+======================================== */
+@media (max-width: 768px) {
+    .contact-methods-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-phone-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-form-section-inner {
+        padding: 30px 20px;
+    }
+}

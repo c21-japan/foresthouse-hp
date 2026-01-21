@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マンション売却の流れ｜6STEPで簡単売却｜フォレストハウス</title>
+    <meta name="description" content="マンション売却の流れを6つのSTEPでわかりやすく解説。無料査定から最短26日で売却完了。成約率86.3%のフォレストハウスが全面サポート。">
+    
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    /* FLOWページ専用CSS */
+    /* ========================================
+       FLOWページ概要
+    ======================================== */
+    .flow-overview {
+        padding: 60px 0;
+        background-color: var(--color-gray-light);
+    }
+
+    .flow-overview__timeline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .flow-overview__step {
+        text-align: center;
+        padding: 15px 20px;
+        background-color: var(--color-white);
+        border-radius: var(--radius-sm);
+        min-width: 100px;
+    }
+
+    .flow-overview__step--highlight {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
+
+    .flow-overview__number {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .flow-overview__step--highlight .flow-overview__number {
+        color: var(--color-white);
+    }
+
+    .flow-overview__label {
+        font-size: 12px;
+    }
+
+    .flow-overview__line {
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-primary);
+        flex-shrink: 0;
+    }
+
+    .flow-overview__note {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .flow-overview__note strong {
+        color: var(--color-primary);
+        font-size: 24px;
+    }
+
+    /* ========================================
+       FLOWステップ
+    ======================================== */
+    .flow-step {
+        padding: 80px 0;
+    }
+
+    .flow-step--alt {
+        background-color: var(--color-gray-light);
+    }
+
+    .flow-step--highlight {
+        background-color: var(--color-primary-light);
+    }
+
+    .flow-step__inner {
+        position: relative;
+    }
+
+    .flow-step__badge {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #FF6B00;
+        color: var(--color-white);
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 700;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .flow-step__number {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .flow-step__number span {
+        display: block;
+        font-size: 14px;
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+
+    .flow-step__number strong {
+        display: block;
+        font-size: 64px;
+        color: var(--color-primary);
+        line-height: 1;
+    }
+
+    .flow-step__content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .flow-step__title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .flow-step__body {
+        display: flex;
+        gap: 50px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .flow-step__body--reverse {
+        flex-direction: row-reverse;
+    }
+
+    .flow-step__image {
+        flex: 1;
+        min-width: 280px;
+        max-width: 350px;
+    }
+
+    .flow-step__image img {
+        border-radius: var(--radius-md);
+        background-color: var(--color-white);
+        width: 100%;
+    }
+
+    .flow-step__text {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .flow-step__lead {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--color-primary);
+    }
+
+    .flow-step__info {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .flow-step__info-item {
+        padding: 15px 20px;
+        background-color: var(--color-white);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step__info-label {
+        display: block;
+        font-size: 12px;
+        color: var(--color-gray);
+    }
+
+    .flow-step__info-value {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .flow-step__list {
+        margin-bottom: 20px;
+    }
+
+    .flow-step__list li {
+        padding: 8px 0;
+        padding-left: 25px;
+        position: relative;
+    }
+
+    .flow-step__list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+
+    .flow-step__actions {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .flow-step__highlight-box {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+
+    .flow-step__highlight-item {
+        text-align: center;
+        padding: 20px 30px;
+        background-color: var(--color-white);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-sm);
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .flow-step__highlight-value {
+        display: block;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .flow-step__highlight-label {
+        font-size: 14px;
+        color: var(--color-gray);
+    }
+
+    .flow-step__complete {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--color-primary);
+        padding: 20px;
+        background-color: var(--color-white);
+        border-radius: var(--radius-sm);
+        margin-top: 20px;
+    }
+
+    /* ========================================
+       FAQ
+    ======================================== */
+    .faq {
+        padding: 80px 0;
+        background-color: var(--color-white);
+    }
+
+    .faq__list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq__item {
+        border-bottom: 1px solid var(--color-gray-border);
+    }
+
+    .faq__question {
+        width: 100%;
+        padding: 20px 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: var(--font-family);
+        gap: 15px;
+    }
+
+    .faq__icon {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .faq__icon::before,
+    .faq__icon::after {
+        content: '';
+        position: absolute;
+        background-color: var(--color-primary);
+        transition: var(--transition);
+    }
+
+    .faq__icon::before {
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .faq__icon::after {
+        width: 2px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .faq__question[aria-expanded="true"] .faq__icon::after {
+        transform: translateX(-50%) rotate(90deg);
+        opacity: 0;
+    }
+
+    .faq__answer {
+        display: none;
+        padding: 0 0 20px;
+        color: var(--color-gray);
+        line-height: 1.7;
+    }
+
+    .faq__answer.is-open {
+        display: block;
+    }
+
+    /* ========================================
+       レスポンシブ（タブレット）
+    ======================================== */
+    @media (max-width: 1024px) {
+        .flow-step__body,
+        .flow-step__body--reverse {
+            flex-direction: column;
+        }
+        
+        .flow-step__image {
+            max-width: 100%;
+        }
+    }
+
+    /* ========================================
+       レスポンシブ（スマホ）
+    ======================================== */
+    @media (max-width: 768px) {
+        .flow-overview__timeline {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .flow-overview__line {
+            width: 2px;
+            height: 20px;
+        }
+        
+        .flow-step__number strong {
+            font-size: 48px;
+        }
+        
+        .flow-step__title {
+            font-size: 22px;
+        }
+        
+        .flow-step__info {
+            flex-direction: column;
+        }
+        
+        .flow-step__highlight-box {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .flow-step__actions {
+            flex-direction: column;
+        }
+        
+        .flow-step__actions .btn {
+            width: 100%;
+        }
+        
+        .flow-step__image,
+        .flow-step__text {
+            min-width: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- ========== ヘッダー ========== -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/index.html">
+                    <img src="/images/logo.webp" alt="フォレストハウス" width="200" height="40">
+                </a>
+            </div>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/index.html" class="nav__link">ホーム</a></li>
+                    <li class="nav__item"><a href="/why.html" class="nav__link">選ばれる理由</a></li>
+                    <li class="nav__item"><a href="/flow.html" class="nav__link nav__link--active">売却の流れ</a></li>
+                    <li class="nav__item"><a href="/results.html" class="nav__link">成約実績</a></li>
+                    <li class="nav__item"><a href="/shops.html" class="nav__link">店舗一覧</a></li>
+                    <li class="nav__item"><a href="/company.html" class="nav__link">会社概要</a></li>
+                    <li class="nav__item"><a href="/contact.html" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__cta">
+                <a href="tel:0120-949-531" class="header__tel">
+                    <span class="header__tel-icon">📞</span>
+                    <span class="header__tel-number">0120-949-531</span>
+                </a>
+                <a href="/assessment.html" class="header__btn btn btn--primary">無料査定</a>
+            </div>
+            
+            <button class="header__hamburger" id="js-hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="header__sp-nav" id="js-sp-nav">
+            <ul class="sp-nav__list">
+                <li><a href="/index.html">ホーム</a></li>
+                <li><a href="/why.html">選ばれる理由</a></li>
+                <li><a href="/flow.html">売却の流れ</a></li>
+                <li><a href="/results.html">成約実績</a></li>
+                <li><a href="/shops.html">店舗一覧</a></li>
+                <li><a href="/company.html">会社概要</a></li>
+                <li><a href="/contact.html">お問い合わせ</a></li>
+                <li><a href="/assessment.html" class="btn btn--primary">無料査定</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== ページヒーロー ===== -->
+        <section class="page-hero">
+            <div class="page-hero__bg" style="background-image: url('/images/flow_hero.webp');"></div>
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content">
+                <h1 class="page-hero__title">マンション売却<br>完全ガイド</h1>
+                <p class="page-hero__subtitle">6つのSTEPで安心・スムーズに売却完了</p>
+            </div>
+        </section>
+
+        <!-- ===== 全体フロー概要 ===== -->
+        <section class="flow-overview">
+            <div class="container">
+                <div class="flow-overview__timeline">
+                    <div class="flow-overview__step">
+                        <span class="flow-overview__number">1</span>
+                        <span class="flow-overview__label">無料査定</span>
+                    </div>
+                    <div class="flow-overview__line"></div>
+                    <div class="flow-overview__step">
+                        <span class="flow-overview__number">2</span>
+                        <span class="flow-overview__label">物件調査</span>
+                    </div>
+                    <div class="flow-overview__line"></div>
+                    <div class="flow-overview__step">
+                        <span class="flow-overview__number">3</span>
+                        <span class="flow-overview__label">媒介契約</span>
+                    </div>
+                    <div class="flow-overview__line"></div>
+                    <div class="flow-overview__step flow-overview__step--highlight">
+                        <span class="flow-overview__number">4</span>
+                        <span class="flow-overview__label">マッチング</span>
+                    </div>
+                    <div class="flow-overview__line"></div>
+                    <div class="flow-overview__step">
+                        <span class="flow-overview__number">5</span>
+                        <span class="flow-overview__label">売買契約</span>
+                    </div>
+                    <div class="flow-overview__line"></div>
+                    <div class="flow-overview__step">
+                        <span class="flow-overview__number">6</span>
+                        <span class="flow-overview__label">お引渡し</span>
+                    </div>
+                </div>
+                <p class="flow-overview__note">平均売却期間：<strong>約26日</strong></p>
+            </div>
+        </section>
+
+        <!-- ===== STEP1 ===== -->
+        <section class="flow-step" id="step1">
+            <div class="container">
+                <div class="flow-step__inner">
+                    <div class="flow-step__number">
+                        <span>STEP</span>
+                        <strong>1</strong>
+                    </div>
+                    <div class="flow-step__content">
+                        <h2 class="flow-step__title">無料査定お申込み</h2>
+                        <div class="flow-step__body">
+                            <div class="flow-step__image">
+                                <img src="/images/flow_step1.webp" alt="無料査定お申込み" width="400" height="400">
+                            </div>
+                            <div class="flow-step__text">
+                                <p class="flow-step__lead">WEB・電話・LINEでお気軽にお申込みください。</p>
+                                <div class="flow-step__info">
+                                    <div class="flow-step__info-item">
+                                        <span class="flow-step__info-label">所要時間</span>
+                                        <span class="flow-step__info-value">約3分</span>
+                                    </div>
+                                    <div class="flow-step__info-item">
+                                        <span class="flow-step__info-label">費用</span>
+                                        <span class="flow-step__info-value">完全無料</span>
+                                    </div>
+                                </div>
+                                <ul class="flow-step__list">
+                                    <li>WEBフォームは24時間受付</li>
+                                    <li>お電話は8:00〜22:00（年中無休）</li>
+                                    <li>LINEなら写真を送るだけで概算査定</li>
+                                </ul>
+                                <div class="flow-step__actions">
+                                    <a href="/assessment.html" class="btn btn--primary">WEBで無料査定</a>
+                                    <a href="https://lin.ee/eU5TyDR" class="btn btn--outline" target="_blank" rel="noopener">LINEで相談</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STEP2 ===== -->
+        <section class="flow-step flow-step--alt" id="step2">
+            <div class="container">
+                <div class="flow-step__inner">
+                    <div class="flow-step__number">
+                        <span>STEP</span>
+                        <strong>2</strong>
+                    </div>
+                    <div class="flow-step__content">
+                        <h2 class="flow-step__title">物件調査・査定</h2>
+                        <div class="flow-step__body flow-step__body--reverse">
+                            <div class="flow-step__image">
+                                <img src="/images/flow_step2.webp" alt="物件調査・査定" width="400" height="400">
+                            </div>
+                            <div class="flow-step__text">
+                                <p class="flow-step__lead">担当者が物件を調査し、適正価格をご提示します。</p>
+                                <div class="flow-step__info">
+                                    <div class="flow-step__info-item">
+                                        <span class="flow-step__info-label">査定結果</span>
+                                        <span class="flow-step__info-value">最短24時間以内</span>
+                                    </div>
+                                </div>
+                                <ul class="flow-step__list">
+                                    <li>机上査定：物件情報から概算価格を算出</li>
+                                    <li>訪問査定：実際に物件を拝見し詳細査定</li>
+                                    <li>近隣相場・成約事例をもとに適正価格をご提示</li>
+                                    <li>売却にかかる費用・税金も丁寧にご説明</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STEP3 ===== -->
+        <section class="flow-step" id="step3">
+            <div class="container">
+                <div class="flow-step__inner">
+                    <div class="flow-step__number">
+                        <span>STEP</span>
+                        <strong>3</strong>
+                    </div>
+                    <div class="flow-step__content">
+                        <h2 class="flow-step__title">媒介契約締結</h2>
+                        <div class="flow-step__body">
+                            <div class="flow-step__image">
+                                <img src="/images/flow_step3.webp" alt="媒介契約締結" width="400" height="400">
+                            </div>
+                            <div class="flow-step__text">
+                                <p class="flow-step__lead">売却条件にご納得いただけたら、媒介契約を締結します。</p>
+                                <ul class="flow-step__list">
+                                    <li><strong>専任媒介契約</strong>：当社が専任で販売活動を行います</li>
+                                    <li><strong>一般媒介契約</strong>：複数の不動産会社に依頼可能</li>
+                                    <li>契約内容は丁寧にご説明いたします</li>
+                                    <li>ご不明点は何でもお気軽にご質問ください</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STEP4（強調） ===== -->
+        <section class="flow-step flow-step--highlight" id="step4">
+            <div class="container">
+                <div class="flow-step__inner">
+                    <div class="flow-step__badge">ここがフォレストハウスの強み！</div>
+                    <div class="flow-step__number">
+                        <span>STEP</span>
+                        <strong>4</strong>
+                    </div>
+                    <div class="flow-step__content">
+                        <h2 class="flow-step__title">購入希望者マッチング</h2>
+                        <div class="flow-step__body flow-step__body--reverse">
+                            <div class="flow-step__image">
+                                <img src="/images/flow_step4.webp" alt="購入希望者マッチング" width="400" height="400">
+                            </div>
+                            <div class="flow-step__text">
+                                <p class="flow-step__lead">すでにお待ちの購入希望者とマッチング！<br>だから成約率86.3%を実現。</p>
+                                <div class="flow-step__highlight-box">
+                                    <div class="flow-step__highlight-item">
+                                        <span class="flow-step__highlight-value">86.3%</span>
+                                        <span class="flow-step__highlight-label">成約率</span>
+                                    </div>
+                                    <div class="flow-step__highlight-item">
+                                        <span class="flow-step__highlight-value">約26日</span>
+                                        <span class="flow-step__highlight-label">平均売却期間</span>
+                                    </div>
+                                </div>
+                                <ul class="flow-step__list">
+                                    <li>チラシ配布で購入希望者を先に集めています</li>
+                                    <li>4店舗27名の営業が購入希望者情報を共有</li>
+                                    <li>条件に合う買主様をスピードマッチング</li>
+                                    <li>内見から条件交渉まで当社がサポート</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STEP5 ===== -->
+        <section class="flow-step" id="step5">
+            <div class="container">
+                <div class="flow-step__inner">
+                    <div class="flow-step__number">
+                        <span>STEP</span>
+                        <strong>5</strong>
+                    </div>
+                    <div class="flow-step__content">
+                        <h2 class="flow-step__title">売買契約締結</h2>
+                        <div class="flow-step__body">
+                            <div class="flow-step__image">
+                                <img src="/images/flow_step5.webp" alt="売買契約締結" width="400" height="400">
+                            </div>
+                            <div class="flow-step__text">
+                                <p class="flow-step__lead">条件合意後、売買契約を締結します。</p>
+                                <ul class="flow-step__list">
+                                    <li>契約書類は当社が全て作成します</li>
+                                    <li>重要事項説明を丁寧に行います</li>
+                                    <li>手付金の受領</li>
+                                    <li>引渡し日・決済日の調整</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STEP6 ===== -->
+        <section class="flow-step flow-step--alt" id="step6">
+            <div class="container">
+                <div class="flow-step__inner">
+                    <div class="flow-step__number">
+                        <span>STEP</span>
+                        <strong>6</strong>
+                    </div>
+                    <div class="flow-step__content">
+                        <h2 class="flow-step__title">お引渡し・決済完了</h2>
+                        <div class="flow-step__body flow-step__body--reverse">
+                            <div class="flow-step__image">
+                                <img src="/images/flow_step6.webp" alt="お引渡し・決済完了" width="400" height="400">
+                            </div>
+                            <div class="flow-step__text">
+                                <p class="flow-step__lead">残金決済・鍵のお引渡しで売却完了です。</p>
+                                <ul class="flow-step__list">
+                                    <li>残代金の受領</li>
+                                    <li>所有権移転登記の手続き</li>
+                                    <li>鍵・関係書類のお引渡し</li>
+                                    <li>仲介手数料のお支払い</li>
+                                </ul>
+                                <div class="flow-step__complete">
+                                    🎉 売却完了！お疲れ様でした！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== よくある質問 ===== -->
+        <section class="faq">
+            <div class="container">
+                <h2 class="section__title">よくある質問</h2>
+                <div class="faq__list">
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Q. 査定は本当に無料ですか？</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>はい、完全無料です。査定後に売却をされなくても費用は一切かかりませんのでご安心ください。まずはお気軽にご相談ください。</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Q. 売却にかかる費用は？</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>主な費用は仲介手数料（売買価格の3%+6万円+消費税）です。その他、印紙代や登記費用などがかかる場合があります。査定時に詳しくご説明いたします。</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Q. 住みながら売却できますか？</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>はい、可能です。多くのお客様が居住中のまま売却されています。内見の日程調整など、当社がしっかりサポートいたします。</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Q. 売却までどのくらいかかりますか？</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>当社の平均売却期間は約26日です。購入希望者が先にいる独自のシステムにより、一般的な不動産会社より大幅に短縮できています。</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Q. 他社で売れなかった物件でも大丈夫？</span>
+                            <span class="faq__icon"></span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>はい、お任せください。当社には多くの購入希望者がお待ちです。他社で売れなかった物件が当社で成約した事例も多数ございます。まずはご相談ください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTAセクション ===== -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-section__inner">
+                    <h2 class="cta-section__title">まずはSTEP1から！<br>無料査定お申込み</h2>
+                    <p class="cta-section__text">あなたのマンション、いくらで売れる？<br>購入希望者がお待ちの今がチャンスです。</p>
+                    <div class="cta-section__buttons">
+                        <a href="/assessment.html" class="btn btn--primary btn--large">WEBで無料査定</a>
+                        <a href="tel:0120-949-531" class="btn btn--secondary btn--large">
+                            📞 0120-949-531
+                        </a>
+                    </div>
+                    <p class="cta-section__note">受付時間：8:00〜22:00（年中無休）</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== フッター ========== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__main">
+                <div class="footer__logo">
+                    <a href="/index.html">
+                        <img src="/images/logo_white.webp" alt="フォレストハウス" width="200" height="40">
+                    </a>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">サービス</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/why.html">選ばれる理由</a></li>
+                            <li><a href="/flow.html">売却の流れ</a></li>
+                            <li><a href="/assessment.html">無料査定</a></li>
+                            <li><a href="/results.html">成約実績</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">店舗情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/shops.html#nara">奈良本店</a></li>
+                            <li><a href="/shops.html#sakai">南大阪店</a></li>
+                            <li><a href="/shops.html#shinosaka">新大阪店</a></li>
+                            <li><a href="/shops.html#hanaten">放出駅前店</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">会社情報</h4>
+                        <ul class="footer__nav-list">
+                            <li><a href="/company.html">会社概要</a></li>
+                            <li><a href="/contact.html">お問い合わせ</a></li>
+                            <li><a href="/privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__contact">
+                    <p class="footer__contact-title">お電話でのご相談</p>
+                    <a href="tel:0120-949-531" class="footer__tel">0120-949-531</a>
+                    <p class="footer__contact-note">受付時間：8:00〜22:00（年中無休）</p>
+                    <a href="https://lin.ee/eU5TyDR" class="footer__line" target="_blank" rel="noopener">
+                        LINEでのご相談はこちら
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 Forest House Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // FAQアコーディオン
+        document.querySelectorAll('.faq__question').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                this.nextElementSibling.classList.toggle('is-open');
+            });
+        });
+    </script>
+</body>
+</html>
