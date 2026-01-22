@@ -1,634 +1,799 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>無料査定｜最短24時間で査定結果｜フォレストハウス</title>
-    <meta name="description" content="マンションの無料査定はフォレストハウスへ。最短24時間で査定結果をお届け。WEB・電話・LINEでお気軽にお申込みください。">
-    
-    <link rel="icon" href="/images/favicon_source.webp">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <style>
-    /* ASSESSMENTページ専用CSS */
-    /* ========================================
-       ASSESSMENTページ特徴
-    ======================================== */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無料査定｜最短24時間で査定結果｜フォレストハウス</title>
+  <meta name="description" content="マンションの無料査定はフォレストハウスへ。最短24時間で査定結果をお届け。WEB・電話・LINEでお気軽にお申込みください。">
+
+  <link rel="icon" href="/images/favicon_source.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- assessmentフォルダ内のCSS（存在する前提） -->
+  <link rel="stylesheet" href="assessment.css">
+
+  <style>
+    :root {
+      --color-primary: #1c2f5a;
+      --color-gray: #666;
+      --color-gray-light: #f5f6f8;
+      --color-white: #fff;
+      --color-black: #111;
+      --color-line: #06c755;
+      --color-gray-border: #e5e7eb;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+
+      --shadow-md: 0 10px 30px rgba(0,0,0,.08);
+      --transition: all .2s ease;
+    }
+
+    /* ===== 最低限のベース（assessment.cssが読めなくても崩壊しない保険） ===== */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      color: var(--color-black);
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    /* ===== ヘッダー（最低限） ===== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid var(--color-gray-border);
+    }
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .header__logo img { display:block; }
+    .header__nav { display: none; }
+    .nav__list { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+    .nav__link { color: var(--color-black); font-weight: 500; }
+    .header__cta { display: none; gap: 14px; align-items: center; }
+    .header__tel-number { font-weight: 700; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      padding: 12px 18px;
+      font-weight: 700;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn--primary {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .btn--primary:hover { opacity: .9; }
+    .btn--large { padding: 14px 18px; }
+    .btn--full { width: 100%; }
+
+    .header__hamburger {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-gray-border);
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      padding: 0;
+    }
+    .header__hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--color-black);
+      margin: 3px 0;
+      transition: var(--transition);
+    }
+
+    .header__sp-nav {
+      display: none;
+      border-top: 1px solid var(--color-gray-border);
+      background: #fff;
+    }
+    .header__sp-nav.is-open { display: block; }
+    .sp-nav__list {
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+    }
+    .sp-nav__list li a {
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    @media (min-width: 1024px) {
+      .header__nav { display: block; }
+      .header__cta { display: inline-flex; }
+      .header__hamburger { display: none; }
+      .header__sp-nav { display: none !important; }
+    }
+
+    /* ===== ページヒーロー（最低限） ===== */
+    .page-hero {
+      position: relative;
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .page-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+    }
+    .page-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+    .page-hero__content {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .page-hero__title { margin: 0 0 10px; font-size: 34px; }
+    .page-hero__subtitle { margin: 0; opacity: .95; }
+
+    /* ===== ここから：あなたが入れていたASSESSMENT専用CSS（変数依存OK） ===== */
     .assessment-features {
-        padding: 60px 0;
-        background-color: var(--color-gray-light);
+      padding: 60px 0;
+      background-color: var(--color-gray-light);
     }
 
     .assessment-features__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
     }
 
     .assessment-features__item {
-        text-align: center;
-        padding: 30px;
-        background-color: var(--color-white);
-        border-radius: var(--radius-md);
+      text-align: center;
+      padding: 30px;
+      background-color: var(--color-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
     }
 
-    .assessment-features__item img {
-        margin: 0 auto 15px;
-    }
+    .assessment-features__item img { margin: 0 auto 15px; }
+    .assessment-features__item h3 { font-size: 18px; margin: 0 0 10px; }
+    .assessment-features__item p { font-size: 14px; color: var(--color-gray); margin: 0; }
 
-    .assessment-features__item h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .assessment-features__item p {
-        font-size: 14px;
-        color: var(--color-gray);
-    }
-
-    /* ========================================
-       査定フォーム
-    ======================================== */
-    .assessment-form-section {
-        padding: 80px 0;
-    }
-
+    .assessment-form-section { padding: 80px 0; }
     .assessment-form-section__inner {
-        max-width: 700px;
-        margin: 0 auto;
-        background-color: var(--color-white);
-        padding: 50px;
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-md);
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: var(--color-white);
+      padding: 50px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-gray-border);
+    }
+    .assessment-form-section__title { text-align: center; font-size: 28px; margin: 0 0 10px; }
+    .assessment-form-section__subtitle { text-align: center; color: var(--color-gray); margin: 0 0 40px; }
+
+    /* フォームの最低限（assessment.cssが薄い場合の保険） */
+    .form-section { margin: 0 0 28px; }
+    .form-section__title { margin: 0 0 14px; font-size: 18px; }
+    .form-group { margin: 0 0 16px; }
+    .form-label { display:block; font-weight: 700; margin: 0 0 8px; }
+    .required { color: #d00; font-weight: 700; font-size: 12px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      border: 1px solid var(--color-gray-border);
+      border-radius: 10px;
+      padding: 12px 12px;
+      font-size: 14px;
+      outline: none;
+    }
+    .form-textarea { resize: vertical; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: rgba(28,47,90,.45);
+      box-shadow: 0 0 0 4px rgba(28,47,90,.12);
     }
 
-    .assessment-form-section__title {
-        text-align: center;
-        font-size: 28px;
-        margin-bottom: 10px;
+    .form-radio-group { display:flex; gap: 12px; flex-wrap: wrap; }
+    .form-radio {
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1px solid var(--color-gray-border);
+      border-radius: 999px;
+      background: #fff;
     }
 
-    .assessment-form-section__subtitle {
-        text-align: center;
-        color: var(--color-gray);
-        margin-bottom: 40px;
-    }
+    .form-input-unit { display:flex; align-items:center; gap: 8px; }
+    .form-input-unit span { color: var(--color-gray); font-size: 14px; }
 
-    /* ========================================
-       電話相談セクション
-    ======================================== */
+    .form-info-box {
+      padding: 15px 20px;
+      background-color: var(--color-gray-light);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-gray-border);
+    }
+    .form-info-box p { margin: 0; line-height: 1.6; }
+    .form-info-box strong { display:block; font-size: 16px; margin: 0 0 5px; color: var(--color-black); }
+    .form-info-box small { font-size: 14px; color: var(--color-gray); }
+
+    .form-agreement { margin: 16px 0 8px; }
+    .form-checkbox { display:flex; gap: 10px; align-items:center; }
+    .form-checkbox a { text-decoration: underline; }
+
     .assessment-phone {
-        padding: 60px 0;
-        background-color: var(--color-gray-light);
+      padding: 60px 0;
+      background-color: var(--color-gray-light);
     }
-
     .assessment-phone__inner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        flex-wrap: wrap;
-        text-align: center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap: 50px;
+      flex-wrap: wrap;
+      text-align:center;
     }
-
-    .assessment-phone__content {
-        text-align: center;
-    }
-
-    .assessment-phone__title {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    .assessment-phone__text {
-        color: var(--color-gray);
-        margin-bottom: 20px;
-    }
-
+    .assessment-phone__title { font-size: 24px; margin: 0 0 10px; }
+    .assessment-phone__text { color: var(--color-gray); margin: 0 0 20px; }
     .assessment-phone__number {
-        display: inline-block;
-        font-size: 32px;
-        font-weight: 700;
-        color: var(--color-primary);
-        margin-bottom: 10px;
+      display:inline-block;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin: 0 0 10px;
     }
+    .assessment-phone__note { font-size: 14px; color: var(--color-gray); margin: 0; }
 
-    .assessment-phone__note {
-        font-size: 14px;
-        color: var(--color-gray);
-    }
-
-    /* ========================================
-       LINE連携
-    ======================================== */
     .assessment-line {
-        padding: 60px 0;
-        background-color: var(--color-line);
-        color: var(--color-white);
-        text-align: center;
+      padding: 60px 0;
+      background-color: var(--color-line);
+      color: var(--color-white);
+      text-align:center;
     }
-
-    .assessment-line__title {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-
-    .assessment-line__text {
-        margin-bottom: 20px;
-        opacity: 0.9;
-    }
-
+    .assessment-line__title { font-size: 28px; margin: 0 0 10px; }
+    .assessment-line__text { margin: 0 0 20px; opacity: .9; }
     .assessment-line__btn {
-        display: inline-block;
-        background-color: var(--color-white);
-        color: var(--color-line);
-        padding: 15px 40px;
-        border-radius: var(--radius-sm);
-        font-weight: 700;
-        transition: var(--transition);
+      display:inline-block;
+      background-color: var(--color-white);
+      color: var(--color-line);
+      padding: 15px 40px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      transition: var(--transition);
     }
+    .assessment-line__btn:hover { opacity: .9; }
 
-    .assessment-line__btn:hover {
-        opacity: 0.9;
-        color: var(--color-line);
-    }
-
-    /* ========================================
-       査定の流れ
-    ======================================== */
-    .assessment-flow {
-        padding: 80px 0;
-    }
-
+    .assessment-flow { padding: 80px 0; }
+    .section__title { text-align:center; margin: 0 0 24px; font-size: 26px; }
     .assessment-flow__timeline {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-bottom: 30px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
     }
-
     .assessment-flow__step {
-        text-align: center;
-        max-width: 200px;
-        flex: 1;
-        min-width: 150px;
+      text-align:center;
+      max-width: 200px;
+      flex: 1;
+      min-width: 150px;
     }
-
     .assessment-flow__number {
-        width: 40px;
-        height: 40px;
-        background-color: var(--color-primary);
-        color: var(--color-white);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        margin: 0 auto 15px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 700;
+      margin: 0 auto 15px;
+    }
+    .assessment-flow__content h4 { font-size: 16px; margin: 0 0 5px; }
+    .assessment-flow__content p { font-size: 13px; color: var(--color-gray); margin: 0; }
+    .assessment-flow__arrow { font-size: 24px; color: var(--color-primary); padding-top: 10px; flex-shrink: 0; }
+    .assessment-flow__note { text-align:center; color: var(--color-gray); font-size: 14px; margin: 0; }
+
+    /* ===== フッター最低限 ===== */
+    .footer {
+      background: #0b1020;
+      color: #fff;
+      padding: 40px 0 18px;
+      margin-top: 0;
+    }
+    .footer__inner { width: min(1100px, 92%); margin: 0 auto; }
+    .footer__main { display:grid; gap: 22px; }
+    .footer__nav { display:grid; gap: 22px; }
+    .footer__nav-title { margin: 0 0 8px; font-size: 14px; opacity: .9; }
+    .footer__nav-list { list-style:none; margin:0; padding:0; display:grid; gap: 8px; }
+    .footer__nav-list a { color:#fff; opacity:.9; }
+    .footer__nav-list a:hover { opacity:1; }
+    .footer__contact-title { margin: 0 0 8px; font-weight: 700; }
+    .footer__tel { font-size: 22px; font-weight: 800; display:inline-block; margin: 6px 0; }
+    .footer__contact-note { margin: 0 0 10px; opacity: .85; }
+    .footer__line { text-decoration: underline; }
+
+    .footer__bottom { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.12); }
+    .footer__copyright { margin:0; opacity:.8; font-size: 12px; text-align:center; }
+
+    @media (min-width: 768px) {
+      .footer__main { grid-template-columns: 1fr 2fr 1fr; align-items:start; }
+      .footer__nav { grid-template-columns: repeat(3, 1fr); }
     }
 
-    .assessment-flow__content h4 {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
-
-    .assessment-flow__content p {
-        font-size: 13px;
-        color: var(--color-gray);
-    }
-
-    .assessment-flow__arrow {
-        font-size: 24px;
-        color: var(--color-primary);
-        padding-top: 10px;
-        flex-shrink: 0;
-    }
-
-    .assessment-flow__note {
-        text-align: center;
-        color: var(--color-gray);
-        font-size: 14px;
-    }
-
-    /* ========================================
-       レスポンシブ（タブレット）
-    ======================================== */
     @media (max-width: 1024px) {
-        .assessment-features__grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+      .assessment-features__grid { grid-template-columns: repeat(2, 1fr); }
     }
-
-    /* ========================================
-       レスポンシブ（スマホ）
-    ======================================== */
     @media (max-width: 768px) {
-        .assessment-features__grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .assessment-form-section__inner {
-            padding: 30px 20px;
-        }
-        
-        .assessment-phone__inner {
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .assessment-flow__timeline {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .assessment-flow__arrow {
-            transform: rotate(90deg);
-        }
+      .assessment-features__grid { grid-template-columns: 1fr; }
+      .assessment-form-section__inner { padding: 30px 20px; }
+      .assessment-phone__inner { flex-direction: column; }
+      .assessment-flow__timeline { flex-direction: column; align-items: center; }
+      .assessment-flow__arrow { transform: rotate(90deg); }
+      .form-row { grid-template-columns: 1fr; }
     }
-    </style>
+  </style>
 </head>
+
 <body>
-    <!-- ========== ヘッダー ========== -->
-    <header class="header">
-        <div class="header__inner">
-            <div class="header__logo">
-                <a href="/index.html">
-                    <img src="/images/logo.webp" alt="フォレストハウス" width="200" height="40">
-                </a>
-            </div>
-            
-            <nav class="header__nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="/index.html" class="nav__link">ホーム</a></li>
-                    <li class="nav__item"><a href="/why.html" class="nav__link">選ばれる理由</a></li>
-                    <li class="nav__item"><a href="/flow.html" class="nav__link">売却の流れ</a></li>
-                    <li class="nav__item"><a href="/results.html" class="nav__link">成約実績</a></li>
-                    <li class="nav__item"><a href="/shops.html" class="nav__link">店舗一覧</a></li>
-                    <li class="nav__item"><a href="/company.html" class="nav__link">会社概要</a></li>
-                    <li class="nav__item"><a href="/contact.html" class="nav__link">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header__cta">
-                <a href="tel:0120-949-531" class="header__tel">
-                    <span class="header__tel-icon">📞</span>
-                    <span class="header__tel-number">0120-949-531</span>
-                </a>
-                <a href="/assessment.html" class="header__btn btn btn--primary">無料査定</a>
-            </div>
-            
-            <button class="header__hamburger" id="js-hamburger" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <!-- ========== ヘッダー ========== -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="header__logo">
+        <a href="/index.html">
+          <img src="/images/logo.webp" alt="フォレストハウス" width="200" height="40">
+        </a>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="/index.html" class="nav__link">ホーム</a></li>
+          <li class="nav__item"><a href="/why.html" class="nav__link">選ばれる理由</a></li>
+          <li class="nav__item"><a href="/flow.html" class="nav__link">売却の流れ</a></li>
+          <li class="nav__item"><a href="/results.html" class="nav__link">成約実績</a></li>
+          <li class="nav__item"><a href="/shops.html" class="nav__link">店舗一覧</a></li>
+          <li class="nav__item"><a href="/company.html" class="nav__link">会社概要</a></li>
+          <li class="nav__item"><a href="/contact.html" class="nav__link">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__cta">
+        <a href="tel:0120-949-531" class="header__tel">
+          <span class="header__tel-icon">📞</span>
+          <span class="header__tel-number">0120-949-531</span>
+        </a>
+        <!-- ★重要：現在の配置に合わせてURLを統一 -->
+        <a href="/assessment/assessment.html" class="header__btn btn btn--primary">無料査定</a>
+      </div>
+
+      <button class="header__hamburger" id="js-hamburger" aria-label="メニューを開く" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="header__sp-nav" id="js-sp-nav">
+      <div class="container">
+        <ul class="sp-nav__list">
+          <li><a href="/index.html">ホーム</a></li>
+          <li><a href="/why.html">選ばれる理由</a></li>
+          <li><a href="/flow.html">売却の流れ</a></li>
+          <li><a href="/results.html">成約実績</a></li>
+          <li><a href="/shops.html">店舗一覧</a></li>
+          <li><a href="/company.html">会社概要</a></li>
+          <li><a href="/contact.html">お問い合わせ</a></li>
+          <li><a href="/assessment/assessment.html" class="btn btn--primary">無料査定</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== ページヒーロー ===== -->
+    <section class="page-hero">
+      <div class="page-hero__bg" style="background-image: url('/images/assessment_hero.webp');"></div>
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content">
+        <h1 class="page-hero__title">無料査定お申込み</h1>
+        <p class="page-hero__subtitle">あなたのマンション、いくらで売れる？<br>購入希望者がお待ちの今がチャンス！</p>
+      </div>
+    </section>
+
+    <!-- ===== 査定の特徴 ===== -->
+    <section class="assessment-features">
+      <div class="container">
+        <div class="assessment-features__grid">
+          <div class="assessment-features__item">
+            <img src="/images/assessment_icon1.webp" alt="完全無料" width="80" height="80">
+            <h3>完全無料</h3>
+            <p>査定費用は一切かかりません。売却しなくてもOK。</p>
+          </div>
+          <div class="assessment-features__item">
+            <img src="/images/assessment_icon2.webp" alt="最短24時間" width="80" height="80">
+            <h3>最短24時間</h3>
+            <p>スピード査定で最短24時間以内に結果をお届け。</p>
+          </div>
+          <div class="assessment-features__item">
+            <img src="/images/assessment_icon3.webp" alt="秘密厳守" width="80" height="80">
+            <h3>秘密厳守</h3>
+            <p>近隣に知られずに査定可能。プライバシー保護。</p>
+          </div>
         </div>
-        
-        <nav class="header__sp-nav" id="js-sp-nav">
-            <ul class="sp-nav__list">
-                <li><a href="/index.html">ホーム</a></li>
-                <li><a href="/why.html">選ばれる理由</a></li>
-                <li><a href="/flow.html">売却の流れ</a></li>
-                <li><a href="/results.html">成約実績</a></li>
-                <li><a href="/shops.html">店舗一覧</a></li>
-                <li><a href="/company.html">会社概要</a></li>
-                <li><a href="/contact.html">お問い合わせ</a></li>
-                <li><a href="/assessment.html" class="btn btn--primary">無料査定</a></li>
+      </div>
+    </section>
+
+    <!-- ===== 査定フォーム ===== -->
+    <section class="assessment-form-section">
+      <div class="container">
+        <div class="assessment-form-section__inner">
+          <h2 class="assessment-form-section__title">WEBで無料査定</h2>
+          <p class="assessment-form-section__subtitle">24時間受付中！以下のフォームにご入力ください。</p>
+
+          <!-- ★重要：actionを同階層に設定（JSが死んでも送れる保険） -->
+          <form class="assessment-form" id="assessment-form" method="POST" action="send_assessment.php">
+            <div class="form-section">
+              <h3 class="form-section__title">物件情報</h3>
+
+              <div class="form-group">
+                <label class="form-label">物件種別 <span class="required">*必須</span></label>
+                <div class="form-radio-group">
+                  <label class="form-radio">
+                    <input type="radio" name="property_type" value="マンション" checked>
+                    <span>マンション</span>
+                  </label>
+                  <label class="form-radio">
+                    <input type="radio" name="property_type" value="戸建">
+                    <span>戸建</span>
+                  </label>
+                  <label class="form-radio">
+                    <input type="radio" name="property_type" value="土地">
+                    <span>土地</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prefecture">物件所在地 <span class="required">*必須</span></label>
+                <div class="form-row">
+                  <select id="prefecture" name="prefecture" class="form-select" required>
+                    <option value="">都道府県を選択</option>
+                    <option value="奈良県">奈良県</option>
+                    <option value="大阪府">大阪府</option>
+                    <option value="京都府">京都府</option>
+                    <option value="兵庫県">兵庫県</option>
+                    <option value="和歌山県">和歌山県</option>
+                    <option value="滋賀県">滋賀県</option>
+                    <option value="その他">その他</option>
+                  </select>
+                  <input type="text" name="city" class="form-input" placeholder="市区町村" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="address">番地・建物名</label>
+                <input type="text" id="address" name="address" class="form-input" placeholder="例：〇〇町1-2-3 〇〇マンション101号室">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="mansion_name">マンション名</label>
+                <input type="text" id="mansion_name" name="mansion_name" class="form-input" placeholder="例：ライオンズマンション〇〇">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="area">専有面積</label>
+                  <div class="form-input-unit">
+                    <input type="number" id="area" name="area" class="form-input" placeholder="例：70">
+                    <span>㎡</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="layout">間取り</label>
+                  <select id="layout" name="layout" class="form-select">
+                    <option value="">選択してください</option>
+                    <option value="1R">1R</option>
+                    <option value="1K">1K</option>
+                    <option value="1DK">1DK</option>
+                    <option value="1LDK">1LDK</option>
+                    <option value="2DK">2DK</option>
+                    <option value="2LDK">2LDK</option>
+                    <option value="3DK">3DK</option>
+                    <option value="3LDK">3LDK</option>
+                    <option value="4LDK">4LDK</option>
+                    <option value="5LDK以上">5LDK以上</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="building_age">築年数</label>
+                <div class="form-input-unit">
+                  <input type="number" id="building_age" name="building_age" class="form-input" placeholder="例：15">
+                  <span>年</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">現在の状況</label>
+                <div class="form-radio-group">
+                  <label class="form-radio">
+                    <input type="radio" name="current_status" value="居住中" checked>
+                    <span>居住中</span>
+                  </label>
+                  <label class="form-radio">
+                    <input type="radio" name="current_status" value="空室">
+                    <span>空室</span>
+                  </label>
+                  <label class="form-radio">
+                    <input type="radio" name="current_status" value="賃貸中">
+                    <span>賃貸中</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="form-section__title">お客様情報</h3>
+
+              <div class="form-group">
+                <label class="form-label" for="name">お名前 <span class="required">*必須</span></label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="例：山田 太郎" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="tel">電話番号 <span class="required">*必須</span></label>
+                <input type="tel" id="tel" name="tel" class="form-input" placeholder="例：090-1234-5678" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">メールアドレス <span class="required">*必須</span></label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="例：example@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">査定方法</label>
+                <div class="form-info-box">
+                  <p><strong>訪問査定（詳細）</strong><br><small>実際に物件を拝見し詳細な査定を行います</small></p>
+                  <input type="hidden" name="assessment_type" value="訪問査定">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">ご要望・ご質問</label>
+                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="売却時期のご希望や、ご質問などございましたらご記入ください。"></textarea>
+              </div>
+            </div>
+
+            <div class="form-agreement">
+              <label class="form-checkbox">
+                <input type="checkbox" name="agreement" required>
+                <span><a href="/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</span>
+              </label>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn--primary btn--large btn--full">無料査定を申し込む</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 電話での査定 ===== -->
+    <section class="assessment-phone">
+      <div class="container">
+        <div class="assessment-phone__inner">
+          <div class="assessment-phone__content">
+            <h2 class="assessment-phone__title">お電話でのお申込み</h2>
+            <p class="assessment-phone__text">「査定希望」とお伝えください。<br>スタッフが丁寧に対応いたします。</p>
+            <a href="tel:0120-949-531" class="assessment-phone__number">📞 0120-949-531</a>
+            <p class="assessment-phone__note">受付時間：8:00〜22:00（年中無休）</p>
+          </div>
+          <div class="assessment-phone__image">
+            <img src="/images/assessment_phone.webp" alt="電話でのお問い合わせ" width="300" height="225">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LINEでの査定 ===== -->
+    <section class="assessment-line">
+      <div class="container">
+        <div class="assessment-line__inner">
+          <div class="assessment-line__content">
+            <h2 class="assessment-line__title">LINEで簡単査定</h2>
+            <p class="assessment-line__text">物件の写真を送るだけで概算査定！<br>お気軽にご相談ください。</p>
+            <a href="https://lin.ee/eU5TyDR" class="assessment-line__btn" target="_blank" rel="noopener">LINEで友だち追加</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 査定後の流れ ===== -->
+    <section class="assessment-flow">
+      <div class="container">
+        <h2 class="section__title">査定後の流れ</h2>
+        <div class="assessment-flow__timeline">
+          <div class="assessment-flow__step">
+            <div class="assessment-flow__number">1</div>
+            <div class="assessment-flow__content">
+              <h4>査定申込</h4>
+              <p>WEB・電話・LINEでお申込み</p>
+            </div>
+          </div>
+          <div class="assessment-flow__arrow">→</div>
+          <div class="assessment-flow__step">
+            <div class="assessment-flow__number">2</div>
+            <div class="assessment-flow__content">
+              <h4>結果連絡</h4>
+              <p>最短24時間以内に査定結果をお届け</p>
+            </div>
+          </div>
+          <div class="assessment-flow__arrow">→</div>
+          <div class="assessment-flow__step">
+            <div class="assessment-flow__number">3</div>
+            <div class="assessment-flow__content">
+              <h4>ご説明</h4>
+              <p>査定額の根拠を丁寧にご説明</p>
+            </div>
+          </div>
+          <div class="assessment-flow__arrow">→</div>
+          <div class="assessment-flow__step">
+            <div class="assessment-flow__number">4</div>
+            <div class="assessment-flow__content">
+              <h4>売却開始</h4>
+              <p>ご納得いただけたら売却スタート</p>
+            </div>
+          </div>
+        </div>
+        <p class="assessment-flow__note">※ 売却を強制することは一切ございません。査定後にお断りいただいても費用はかかりません。</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== フッター ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__main">
+        <div class="footer__logo">
+          <a href="/index.html">
+            <img src="/images/logo_white.webp" alt="フォレストハウス" width="200" height="40">
+          </a>
+        </div>
+        <div class="footer__nav">
+          <div class="footer__nav-column">
+            <h4 class="footer__nav-title">サービス</h4>
+            <ul class="footer__nav-list">
+              <li><a href="/why.html">選ばれる理由</a></li>
+              <li><a href="/flow.html">売却の流れ</a></li>
+              <li><a href="/assessment/assessment.html">無料査定</a></li>
+              <li><a href="/results.html">成約実績</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <main>
-        <!-- ===== ページヒーロー ===== -->
-        <section class="page-hero">
-            <div class="page-hero__bg" style="background-image: url('/images/assessment_hero.webp');"></div>
-            <div class="page-hero__overlay"></div>
-            <div class="page-hero__content">
-                <h1 class="page-hero__title">無料査定お申込み</h1>
-                <p class="page-hero__subtitle">あなたのマンション、いくらで売れる？<br>購入希望者がお待ちの今がチャンス！</p>
-            </div>
-        </section>
-
-        <!-- ===== 査定の特徴 ===== -->
-        <section class="assessment-features">
-            <div class="container">
-                <div class="assessment-features__grid">
-                    <div class="assessment-features__item">
-                        <img src="/images/assessment_icon1.webp" alt="完全無料" width="80" height="80">
-                        <h3>完全無料</h3>
-                        <p>査定費用は一切かかりません。売却しなくてもOK。</p>
-                    </div>
-                    <div class="assessment-features__item">
-                        <img src="/images/assessment_icon2.webp" alt="最短24時間" width="80" height="80">
-                        <h3>最短24時間</h3>
-                        <p>スピード査定で最短24時間以内に結果をお届け。</p>
-                    </div>
-                    <div class="assessment-features__item">
-                        <img src="/images/assessment_icon3.webp" alt="秘密厳守" width="80" height="80">
-                        <h3>秘密厳守</h3>
-                        <p>近隣に知られずに査定可能。プライバシー保護。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== 査定フォーム ===== -->
-        <section class="assessment-form-section">
-            <div class="container">
-                <div class="assessment-form-section__inner">
-                    <h2 class="assessment-form-section__title">WEBで無料査定</h2>
-                    <p class="assessment-form-section__subtitle">24時間受付中！以下のフォームにご入力ください。</p>
-                    
-                    <form class="assessment-form" action="https://form.run/@century21top" method="POST">
-                        
-                        <div class="form-section">
-                            <h3 class="form-section__title">物件情報</h3>
-                            
-                            <div class="form-group">
-                                <label class="form-label">物件種別 <span class="required">*必須</span></label>
-                                <div class="form-radio-group">
-                                    <label class="form-radio">
-                                        <input type="radio" name="property_type" value="マンション" checked>
-                                        <span>マンション</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="property_type" value="戸建">
-                                        <span>戸建</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="property_type" value="土地">
-                                        <span>土地</span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="prefecture">物件所在地 <span class="required">*必須</span></label>
-                                <div class="form-row">
-                                    <select id="prefecture" name="prefecture" class="form-select" required>
-                                        <option value="">都道府県を選択</option>
-                                        <option value="奈良県">奈良県</option>
-                                        <option value="大阪府">大阪府</option>
-                                        <option value="京都府">京都府</option>
-                                        <option value="兵庫県">兵庫県</option>
-                                        <option value="和歌山県">和歌山県</option>
-                                        <option value="滋賀県">滋賀県</option>
-                                        <option value="その他">その他</option>
-                                    </select>
-                                    <input type="text" name="city" class="form-input" placeholder="市区町村" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="address">番地・建物名</label>
-                                <input type="text" id="address" name="address" class="form-input" placeholder="例：〇〇町1-2-3 〇〇マンション101号室">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="mansion_name">マンション名</label>
-                                <input type="text" id="mansion_name" name="mansion_name" class="form-input" placeholder="例：ライオンズマンション〇〇">
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label" for="area">専有面積</label>
-                                    <div class="form-input-unit">
-                                        <input type="number" id="area" name="area" class="form-input" placeholder="例：70">
-                                        <span>㎡</span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label" for="layout">間取り</label>
-                                    <select id="layout" name="layout" class="form-select">
-                                        <option value="">選択してください</option>
-                                        <option value="1R">1R</option>
-                                        <option value="1K">1K</option>
-                                        <option value="1DK">1DK</option>
-                                        <option value="1LDK">1LDK</option>
-                                        <option value="2DK">2DK</option>
-                                        <option value="2LDK">2LDK</option>
-                                        <option value="3DK">3DK</option>
-                                        <option value="3LDK">3LDK</option>
-                                        <option value="4LDK">4LDK</option>
-                                        <option value="5LDK以上">5LDK以上</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="building_age">築年数</label>
-                                <div class="form-input-unit">
-                                    <input type="number" id="building_age" name="building_age" class="form-input" placeholder="例：15">
-                                    <span>年</span>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">現在の状況</label>
-                                <div class="form-radio-group">
-                                    <label class="form-radio">
-                                        <input type="radio" name="current_status" value="居住中" checked>
-                                        <span>居住中</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="current_status" value="空室">
-                                        <span>空室</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="current_status" value="賃貸中">
-                                        <span>賃貸中</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-section">
-                            <h3 class="form-section__title">お客様情報</h3>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="name">お名前 <span class="required">*必須</span></label>
-                                <input type="text" id="name" name="name" class="form-input" placeholder="例：山田 太郎" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="tel">電話番号 <span class="required">*必須</span></label>
-                                <input type="tel" id="tel" name="tel" class="form-input" placeholder="例：090-1234-5678" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="email">メールアドレス <span class="required">*必須</span></label>
-                                <input type="email" id="email" name="email" class="form-input" placeholder="例：example@email.com" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">査定方法 <span class="required">*必須</span></label>
-                                <div class="form-radio-group form-radio-group--vertical">
-                                    <label class="form-radio">
-                                        <input type="radio" name="assessment_type" value="机上査定" checked>
-                                        <span><strong>机上査定（概算）</strong><br><small>物件情報から概算価格を算出します</small></span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="assessment_type" value="訪問査定">
-                                        <span><strong>訪問査定（詳細）</strong><br><small>実際に物件を拝見し詳細な査定を行います</small></span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="message">ご要望・ご質問</label>
-                                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="売却時期のご希望や、ご質問などございましたらご記入ください。"></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="form-agreement">
-                            <label class="form-checkbox">
-                                <input type="checkbox" name="agreement" required>
-                                <span><a href="/privacy.html" target="_blank">プライバシーポリシー</a>に同意する</span>
-                            </label>
-                        </div>
-                        
-                        <div class="form-submit">
-                            <button type="submit" class="btn btn--primary btn--large btn--full">無料査定を申し込む</button>
-                        </div>
-                        
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== 電話での査定 ===== -->
-        <section class="assessment-phone">
-            <div class="container">
-                <div class="assessment-phone__inner">
-                    <div class="assessment-phone__content">
-                        <h2 class="assessment-phone__title">お電話でのお申込み</h2>
-                        <p class="assessment-phone__text">「査定希望」とお伝えください。<br>スタッフが丁寧に対応いたします。</p>
-                        <a href="tel:0120-949-531" class="assessment-phone__number">
-                            📞 0120-949-531
-                        </a>
-                        <p class="assessment-phone__note">受付時間：8:00〜22:00（年中無休）</p>
-                    </div>
-                    <div class="assessment-phone__image">
-                        <img src="/images/assessment_phone.webp" alt="電話でのお問い合わせ" width="300" height="225">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== LINEでの査定 ===== -->
-        <section class="assessment-line">
-            <div class="container">
-                <div class="assessment-line__inner">
-                    <div class="assessment-line__content">
-                        <h2 class="assessment-line__title">LINEで簡単査定</h2>
-                        <p class="assessment-line__text">物件の写真を送るだけで概算査定！<br>お気軽にご相談ください。</p>
-                        <a href="https://lin.ee/eU5TyDR" class="assessment-line__btn" target="_blank" rel="noopener">
-                            LINEで友だち追加
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== 査定後の流れ ===== -->
-        <section class="assessment-flow">
-            <div class="container">
-                <h2 class="section__title">査定後の流れ</h2>
-                <div class="assessment-flow__timeline">
-                    <div class="assessment-flow__step">
-                        <div class="assessment-flow__number">1</div>
-                        <div class="assessment-flow__content">
-                            <h4>査定申込</h4>
-                            <p>WEB・電話・LINEでお申込み</p>
-                        </div>
-                    </div>
-                    <div class="assessment-flow__arrow">→</div>
-                    <div class="assessment-flow__step">
-                        <div class="assessment-flow__number">2</div>
-                        <div class="assessment-flow__content">
-                            <h4>結果連絡</h4>
-                            <p>最短24時間以内に査定結果をお届け</p>
-                        </div>
-                    </div>
-                    <div class="assessment-flow__arrow">→</div>
-                    <div class="assessment-flow__step">
-                        <div class="assessment-flow__number">3</div>
-                        <div class="assessment-flow__content">
-                            <h4>ご説明</h4>
-                            <p>査定額の根拠を丁寧にご説明</p>
-                        </div>
-                    </div>
-                    <div class="assessment-flow__arrow">→</div>
-                    <div class="assessment-flow__step">
-                        <div class="assessment-flow__number">4</div>
-                        <div class="assessment-flow__content">
-                            <h4>売却開始</h4>
-                            <p>ご納得いただけたら売却スタート</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="assessment-flow__note">※ 売却を強制することは一切ございません。査定後にお断りいただいても費用はかかりません。</p>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ========== フッター ========== -->
-    <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__main">
-                <div class="footer__logo">
-                    <a href="/index.html">
-                        <img src="/images/logo_white.webp" alt="フォレストハウス" width="200" height="40">
-                    </a>
-                </div>
-                <div class="footer__nav">
-                    <div class="footer__nav-column">
-                        <h4 class="footer__nav-title">サービス</h4>
-                        <ul class="footer__nav-list">
-                            <li><a href="/why.html">選ばれる理由</a></li>
-                            <li><a href="/flow.html">売却の流れ</a></li>
-                            <li><a href="/assessment.html">無料査定</a></li>
-                            <li><a href="/results.html">成約実績</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__nav-column">
-                        <h4 class="footer__nav-title">店舗情報</h4>
-                        <ul class="footer__nav-list">
-                            <li><a href="/shops.html#nara">奈良本店</a></li>
-                            <li><a href="/shops.html#sakai">南大阪店</a></li>
-                            <li><a href="/shops.html#shinosaka">新大阪店</a></li>
-                            <li><a href="/shops.html#hanaten">放出駅前店</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__nav-column">
-                        <h4 class="footer__nav-title">会社情報</h4>
-                        <ul class="footer__nav-list">
-                            <li><a href="/company.html">会社概要</a></li>
-                            <li><a href="/contact.html">お問い合わせ</a></li>
-                            <li><a href="/privacy.html">プライバシーポリシー</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer__contact">
-                    <p class="footer__contact-title">お電話でのご相談</p>
-                    <a href="tel:0120-949-531" class="footer__tel">0120-949-531</a>
-                    <p class="footer__contact-note">受付時間：8:00〜22:00（年中無休）</p>
-                    <a href="https://lin.ee/eU5TyDR" class="footer__line" target="_blank" rel="noopener">
-                        LINEでのご相談はこちら
-                    </a>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p class="footer__copyright">© 2025 Forest House Inc. All Rights Reserved.</p>
-            </div>
+          </div>
+          <div class="footer__nav-column">
+            <h4 class="footer__nav-title">店舗情報</h4>
+            <ul class="footer__nav-list">
+              <li><a href="/shops.html#nara">奈良本店</a></li>
+              <li><a href="/shops.html#sakai">南大阪店</a></li>
+              <li><a href="/shops.html#shinosaka">新大阪店</a></li>
+              <li><a href="/shops.html#hanaten">放出駅前店</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-column">
+            <h4 class="footer__nav-title">会社情報</h4>
+            <ul class="footer__nav-list">
+              <li><a href="/company.html">会社概要</a></li>
+              <li><a href="/contact.html">お問い合わせ</a></li>
+              <li><a href="/privacy.html">プライバシーポリシー</a></li>
+            </ul>
+          </div>
         </div>
-    </footer>
+        <div class="footer__contact">
+          <p class="footer__contact-title">お電話でのご相談</p>
+          <a href="tel:0120-949-531" class="footer__tel">0120-949-531</a>
+          <p class="footer__contact-note">受付時間：8:00〜22:00（年中無休）</p>
+          <a href="https://lin.ee/eU5TyDR" class="footer__line" target="_blank" rel="noopener">LINEでのご相談はこちら</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Forest House Inc. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    <script src="/js/main.js"></script>
+  <!-- /js/main.js が404でも最低限動くように自前でハンバーガーだけ実装 -->
+  <script>
+    (function () {
+      const btn = document.getElementById('js-hamburger');
+      const nav = document.getElementById('js-sp-nav');
+      if (btn && nav) {
+        btn.addEventListener('click', () => nav.classList.toggle('is-open'));
+      }
+    })();
+  </script>
+
+  <script>
+    // 査定フォーム送信処理（AJAX。失敗時は通常送信にフォールバック）
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('assessment-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton ? submitButton.textContent : '';
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = '送信中...';
+        }
+
+        const formData = new FormData(form);
+
+        fetch('send_assessment.php', {
+          method: 'POST',
+          body: formData
+        })
+          .then(async (response) => {
+            // PHPがJSONを返せないケースに備えて保険
+            const text = await response.text();
+            try {
+              return JSON.parse(text);
+            } catch {
+              return { success: false, message: 'サーバー応答が不正です（JSONではありません）。' };
+            }
+          })
+          .then((data) => {
+            if (data && data.success) {
+              alert('お申し込みありがとうございます。\n担当者より折り返しご連絡いたします。');
+              form.reset();
+            } else {
+              alert('送信に失敗しました。\n' + (data?.message || 'しばらく時間をおいて再度お試しください。'));
+              // フォールバック：通常送信を試す
+              try { form.submit(); } catch (_) {}
+            }
+          })
+          .catch(() => {
+            alert('送信に失敗しました。\nしばらく時間をおいて再度お試しください。');
+            // フォールバック：通常送信を試す
+            try { form.submit(); } catch (_) {}
+          })
+          .finally(() => {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = originalText;
+            }
+          });
+      });
+    });
+  </script>
 </body>
 </html>
