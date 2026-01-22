@@ -746,6 +746,30 @@
       const form = document.getElementById('assessment-form');
       if (!form) return;
 
+      // Vercelなどの静的ホスティング環境を検出
+      const isVercel = window.location.hostname.includes('vercel.app') || 
+                       window.location.hostname.includes('vercel.com');
+      
+      // Vercelの場合はフォーム送信を無効化
+      if (isVercel) {
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'フォーム送信は本番サイトでご利用ください';
+          submitButton.style.opacity = '0.6';
+          submitButton.style.cursor = 'not-allowed';
+        }
+        
+        // フォーム送信を無効化
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          alert('このサイトはプレビュー用です。\nフォーム送信は本番サイト（ロリポップ）でご利用ください。');
+          return false;
+        });
+        return;
+      }
+
+      // ロリポップなどのPHP環境でのみフォーム送信を有効化
       form.addEventListener('submit', function (e) {
         e.preventDefault();
 
