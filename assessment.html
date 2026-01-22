@@ -746,30 +746,7 @@
       const form = document.getElementById('assessment-form');
       if (!form) return;
 
-      // Vercelなどの静的ホスティング環境を検出
-      const isVercel = window.location.hostname.includes('vercel.app') || 
-                       window.location.hostname.includes('vercel.com');
-      
-      // Vercelの場合はフォーム送信を無効化
-      if (isVercel) {
-        const submitButton = form.querySelector('button[type="submit"]');
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = 'フォーム送信は本番サイトでご利用ください';
-          submitButton.style.opacity = '0.6';
-          submitButton.style.cursor = 'not-allowed';
-        }
-        
-        // フォーム送信を無効化
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          alert('このサイトはプレビュー用です。\nフォーム送信は本番サイト（ロリポップ）でご利用ください。');
-          return false;
-        });
-        return;
-      }
-
-      // ロリポップなどのPHP環境でのみフォーム送信を有効化
+      // フォーム送信処理
       form.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -780,14 +757,42 @@
           submitButton.textContent = '送信中...';
         }
 
-        const formData = new FormData(form);
+        // フォームデータを取得
+        const formData = {
+          property_type: form.querySelector('input[name="property_type"]:checked')?.value || '',
+          prefecture: form.querySelector('#prefecture')?.value || '',
+          city: form.querySelector('input[name="city"]')?.value || '',
+          address: form.querySelector('#address')?.value || '',
+          mansion_name: form.querySelector('#mansion_name')?.value || '',
+          area: form.querySelector('#area')?.value || '',
+          layout: form.querySelector('#layout')?.value || '',
+          building_age: form.querySelector('#building_age')?.value || '',
+          current_status: form.querySelector('input[name="current_status"]:checked')?.value || '',
+          name: form.querySelector('#name')?.value || '',
+          tel: form.querySelector('#tel')?.value || '',
+          email: form.querySelector('#email')?.value || '',
+          assessment_type: form.querySelector('input[name="assessment_type"]')?.value || '訪問査定',
+          message: form.querySelector('#message')?.value || ''
+        };
 
-        fetch('send_assessment.php', {
+        // Vercel環境かどうかを判定
+        const isVercel = window.location.hostname.includes('vercel.app') || 
+                         window.location.hostname.includes('vercel.com');
+        
+        // APIエンドポイントを決定
+        const apiUrl = isVercel 
+          ? '/api/send-assessment'  // Vercel Functions
+          : 'send_assessment.php';    // PHP（ロリポップなど）
+
+        // 送信処理
+        fetch(apiUrl, {
           method: 'POST',
-          body: formData
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
         })
           .then(async (response) => {
-            // PHPがJSONを返せないケースに備えて保険
             const text = await response.text();
             try {
               return JSON.parse(text);
