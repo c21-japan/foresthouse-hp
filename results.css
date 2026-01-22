@@ -1,6 +1,7 @@
 /* ========================================
    results.css - 成約実績ページ専用
    フォレストハウス - 2024
+   BEM命名規則対応版
 ======================================== */
 
 /* ========================================
@@ -11,13 +12,13 @@
     background-color: var(--color-gray-light);
 }
 
-.results-stats-grid {
+.results-stats__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-.results-stats-item {
+.results-stats__item {
     text-align: center;
     padding: 40px 30px;
     background-color: var(--color-white);
@@ -25,25 +26,25 @@
     box-shadow: var(--shadow-sm);
 }
 
-.results-stats-icon {
+.results-stats__icon {
     font-size: 40px;
     margin-bottom: 15px;
 }
 
-.results-stats-value {
+.results-stats__value {
     font-size: 56px;
     font-weight: 700;
     color: var(--color-primary);
     line-height: 1;
 }
 
-.results-stats-unit {
+.results-stats__unit {
     font-size: 24px;
     font-weight: 700;
     color: var(--color-primary);
 }
 
-.results-stats-label {
+.results-stats__label {
     display: block;
     font-size: 14px;
     color: var(--color-gray);
@@ -57,12 +58,12 @@
     padding: 80px 0;
 }
 
-.results-area-chart {
+.results-area__chart {
     max-width: 700px;
     margin: 0 auto;
 }
 
-.results-area-item {
+.results-area__item {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -70,14 +71,14 @@
     flex-wrap: wrap;
 }
 
-.results-area-name {
+.results-area__name {
     width: 120px;
     font-size: 14px;
     font-weight: 500;
     flex-shrink: 0;
 }
 
-.results-area-bar {
+.results-area__bar {
     flex: 1;
     height: 30px;
     background-color: var(--color-gray-light);
@@ -86,13 +87,13 @@
     min-width: 200px;
 }
 
-.results-area-bar-fill {
+.results-area__bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
     border-radius: var(--radius-sm);
 }
 
-.results-area-count {
+.results-area__count {
     width: 80px;
     font-size: 14px;
     font-weight: 700;
@@ -109,7 +110,7 @@
     background-color: var(--color-gray-light);
 }
 
-.voices-grid {
+.voices__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -122,7 +123,7 @@
     box-shadow: var(--shadow-sm);
 }
 
-.voice-card-header {
+.voice-card__header {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -130,7 +131,7 @@
     background-color: var(--color-primary-light);
 }
 
-.voice-card-image {
+.voice-card__image {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -139,60 +140,60 @@
     flex-shrink: 0;
 }
 
-.voice-card-info {
+.voice-card__info {
     flex: 1;
     min-width: 0;
 }
 
-.voice-card-area {
+.voice-card__area {
     display: block;
     font-size: 12px;
     color: var(--color-gray);
 }
 
-.voice-card-name {
+.voice-card__name {
     display: block;
     font-size: 14px;
     font-weight: 700;
 }
 
-.voice-card-stars {
+.voice-card__stars {
     color: #FFB800;
     font-size: 14px;
 }
 
-.voice-card-body {
+.voice-card__body {
     padding: 20px;
 }
 
-.voice-card-text {
+.voice-card__text {
     font-size: 14px;
     line-height: 1.7;
     color: var(--color-gray);
 }
 
-.voice-card-footer {
+.voice-card__footer {
     display: flex;
     border-top: 1px solid var(--color-gray-border);
 }
 
-.voice-card-result {
+.voice-card__result {
     flex: 1;
     text-align: center;
     padding: 15px;
 }
 
-.voice-card-result:first-child {
+.voice-card__result:first-child {
     border-right: 1px solid var(--color-gray-border);
 }
 
-.voice-card-result-label {
+.voice-card__result-label {
     display: block;
     font-size: 11px;
     color: var(--color-gray);
 }
 
-.voice-card-result-value {
+.voice-card__result-value {
     display: block;
     font-size: 18px;
     font-weight: 700;
@@ -203,11 +204,11 @@
    レスポンシブ（タブレット）
 ======================================== */
 @media (max-width: 1024px) {
-    .results-stats-grid {
+    .results-stats__grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
-    .voices-grid {
+    .voices__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -216,32 +217,32 @@
    レスポンシブ（スマホ）
 ======================================== */
 @media (max-width: 768px) {
-    .results-stats-grid {
+    .results-stats__grid {
         grid-template-columns: 1fr;
     }
     
-    .results-stats-value {
+    .results-stats__value {
         font-size: 42px;
     }
     
-    .results-area-item {
+    .results-area__item {
         flex-wrap: wrap;
     }
     
-    .results-area-name {
+    .results-area__name {
         width: 100%;
         margin-bottom: 5px;
     }
     
-    .results-area-bar {
+    .results-area__bar {
         min-width: 150px;
     }
     
-    .results-area-count {
+    .results-area__count {
         width: auto;
     }
     
-    .voices-grid {
+    .voices__grid {
         grid-template-columns: 1fr;
     }
 }
